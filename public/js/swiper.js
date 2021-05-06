@@ -1,5 +1,5 @@
 // banner
-var Nswiper = new Swiper("#banner", {
+var Bswiper = new Swiper("#banner", {
 	loop: true,
 	slidesPerView: 1,
 	spaceBetween: 0,
@@ -24,7 +24,7 @@ $("#banner").mouseleave(function () {
 });
 
 // activity
-var Nswiper = new Swiper("#activity", {
+var Aswiper = new Swiper("#activity", {
 	loop: true,
 	slidesPerView: 5,
 	spaceBetween: 20,

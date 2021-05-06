@@ -232,6 +232,12 @@ footer .copy-right {
 footer .copy-right p {
   font-size: 14px;
   margin: 0;
+  display: inline-block;
+}
+
+footer .copy-right img {
+  width: 52px;
+  margin-left: 5px;
 }
 
 /* main */
