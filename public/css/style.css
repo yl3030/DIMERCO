@@ -1,7 +1,12 @@
+@font-face {
+  font-family: "awesomefont";
+  src: url(../css/fontawesome/webfonts/fa-solid-900.woff2),url(../css/fontawesome/webfonts/fa-solid-900.woff),url(../css/webfonts/fa-solid-900.ttf);
+}
+
 body {
   color: #000;
-  font-family: "微軟正黑體", "Noto Sans TC", sans-serif, "Noto Serif TC", serif,
-    "Open Sans", sans-serif;
+  font-family: "微軟正黑體", "黑體-繁", "helvetica", "Arial", sans-serif;
+  background-color: var(--bg-color);
 }
 
 ul {
