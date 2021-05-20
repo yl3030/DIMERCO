@@ -4,17 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>中菲信託｜交易明細</title>
+    <title>中菲信託｜信託申請</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css" />
     <!-- fontawesome -->
     <link rel="stylesheet" href="./public/css/fontawesome/all.css" />
     <script src="./public/js/fontawesome/all.js"></script>
-    <!-- datepicker CSS -->
-    <link
-      rel="stylesheet"
-      href="./public/css/datepicker/bootstrap-datepicker.standalone.css"
-    />
     <!-- my CSS -->
     <link rel="stylesheet" href="./public/css/color.css" />
     <link rel="stylesheet" href="./public/css/style.css" />
@@ -273,11 +268,11 @@
               </ul>
             </li>
             <li class="back-main-menu">
-              <div class="flex-style">
+              <div class="flex-style active">
                 <span>C23456789012</span>
                 <img src="./public/img/icon_arrow_right_white.svg" alt="" />
               </div>
-              <ul class="back-drop-down">
+              <ul class="back-drop-down" style="display: block">
                 <li>
                   <a href="#" class="flex-style">
                     <span>投資總覽</span>
@@ -323,7 +318,7 @@
                     />
                   </a>
                 </li>
-                <li>
+                <li class="active">
                   <a href="#" class="flex-style">
                     <span>下載</span>
                     <img
@@ -420,139 +415,27 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
             <li class="breadcrumb-item"><a href="#">個人契約</a></li>
-            <li class="breadcrumb-item"><a href="#">D23456789012</a></li>
-            <li class="breadcrumb-item"><a href="#">資產餘額</a></li>
-            <li class="breadcrumb-item active" aria-current="page">交易明細</li>
+            <li class="breadcrumb-item"><a href="#">E23456789012</a></li>
+            <li class="breadcrumb-item active">
+              <a href="./apply.html">信託申請</a>
+            </li>
           </ol>
         </nav>
-        <h1 class="back-title">交易明細</h1>
+        <h1 class="back-title">信託申請</h1>
         <p class="contract-name">
-          契約：D23456789012一限制三四五六七八九十一二
-        </p>
-        <div class="contract-value row">
-          <div class="col-lg-12">
-            <form class="flex-style detail-form">
+            契約：D23456789012一限制三四五六七八九十一二
+          </p>
+        <div class="apply-box">
+          <div class="pdf-box">
+              <iframe src="./public/pdf/example.pdf" width="100%" height="600" frameborder="0"></iframe>
+          </div>
+          <div class="agree-box">
               <div>
-              <label>提撥：公提金公提金公公工工工</label>
-            </div>
-              <div class="flex-style classification">
-                <img
-                  class="select-icon"
-                  src="./public/img/icon_trend.svg"
-                  alt=""
-                />
-                <div class="select-box">
-                  <select id="classification">
-                    <option value="股票" selected>股票</option>
-                    <option value="基金">基金</option>
-                    <option value="現金">現金</option>
-                  </select>
-                  <img
-                    class="arrow"
-                    src="./public/img/icon_arrow_right_orange.svg"
-                    alt=""
-                  />
-                </div>
+                <i class="fas fa-check"></i>
               </div>
-              <div class="flex-style start-date date-select">
-                <img
-                  class="select-icon"
-                  src="./public/img/icon_calendar.svg"
-                  alt=""
-                />
-                <input
-                  type="text"
-                  class="form-control daterange"
-                  id="start-date"
-                  data-provide="datepicker"
-                />
-                <img
-                  class="arrow"
-                  src="./public/img/icon_arrow_right_orange.svg"
-                  alt=""
-                />
-              </div>
-              <div class="flex-style end-date date-select">
-                <img
-                  class="select-icon"
-                  src="./public/img/icon_calendar.svg"
-                  alt=""
-                />
-                <input
-                  type="text"
-                  class="form-control daterange"
-                  id="end-date"
-                  data-provide="datepicker"
-                />
-                <img
-                  class="arrow"
-                  src="./public/img/icon_arrow_right_orange.svg"
-                  alt=""
-                />
-              </div>
-              <div class="btn-box">
-                <button>查詢</button>
-              </div>
-            </form>
+              <span>我已詳閱申請書並同意其內容</span>
           </div>
-          <div class="back-table yellow-table detail-table col-lg-12">
-            <div class="bm-box">
-              <div class="title-col">
-                <div class="flex-style">
-                  <span>交易日期</span>
-                  <span>股票名稱</span>
-                  <span>交易型態</span>
-                  <span>異動金額(新台幣元)</span>
-                  <span>異動股數(股)</span>
-                </div>
-              </div>
-              <div class="content-col">
-                <div class="flex-style">
-                  <span>2021/02/02</span>
-                  <span>中菲電腦</span>
-                  <span>提撥</span>
-                  <span>427,630</span>
-                  <span></span>
-                </div>
-              </div>
-              <div class="content-col">
-                <div class="flex-style">
-                  <span>2021/02/04</span>
-                  <span>中菲電腦</span>
-                  <span>部分領回</span>
-                  <span>-1898</span>
-                  <span>-1357</span>
-                </div>
-              </div>
-              <div class="content-col">
-                <div class="flex-style">
-                  <span>2021/02/04</span>
-                  <span>中菲電腦</span>
-                  <span>退出</span>
-                  <span>85,526</span>
-                  <span></span>
-                </div>
-              </div>
-              <div class="content-col">
-                <div class="flex-style">
-                  <span>2021/02/09</span>
-                  <span>中菲電腦</span>
-                  <span>部分領回</span>
-                  <span>12,234,098</span>
-                  <span>12,234,098</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="main-btn back-balance yellow-bg">
-            <a href="./balance.html">回資產餘額頁</a>
-          </button>
-          <div class="alert-box col-lg-12">
-            <div class="bm-box">
-              <h5></h5>
-              <p></p>
-            </div>
-          </div>
+          <button class="agree-btn main-btn nolink yellow-bg" disabled>同意並送出</button>
         </div>
       </div>
     </main>
@@ -595,27 +478,7 @@
     <!-- Bootstrap JS -->
     <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./public/js/bootstrap/bootstrap.min.js"></script>
-    <!-- chart JS -->
-    <!-- <script src="./public/js/chart/chart.min.js"></script> -->
-    <!-- datepicker JS -->
-    <script src="./public/js/datepicker/bootstrap-datepicker.js"></script>
     <!-- my JS -->
-    <!-- <script src="./public/js/balance-chart.js"></script> -->
     <script src="./public/js/index.js"></script>
-
-    <script>
-      var now = new Date();
-      var year = now.getFullYear();
-      var month = now.getMonth() + 1;
-      var date = now.getDate();
-      var DateRange = year + "-" + month + "-" + date;
-      $("#start-date").val(DateRange);
-      $("#end-date").val(DateRange);
-      $(".daterange").datepicker({
-        autoclose: true,
-        format: "yyyy-mm-dd",
-        todayHighlight: true,
-      });
-    </script>
   </body>
 </html>

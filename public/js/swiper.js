@@ -28,14 +28,6 @@ var Aswiper = new Swiper("#activity", {
 	loop: true,
 	slidesPerView: 5,
 	spaceBetween: 20,
-	// autoplay: {
-	// 	delay: 5000,
-	// 	disableOnInteraction: false,
-	// },
-	// pagination: {
-	// 	el: "#activity-pag",
-	// 	clickable: true,
-	// },
 	navigation: {
 		nextEl: ".Anext",
 		prevEl: ".Aprev", 

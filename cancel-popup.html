@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中菲信託｜取消委託設定</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css" />
+     <!-- fontawesome -->
+     <link rel="stylesheet" href="./public/css/fontawesome/all.css">
+     <script src="./public/js/fontawesome/all.js"></script>
+    <!-- my CSS -->
+    <link rel="stylesheet" href="./public/css/color.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+</head>
+<body>
+    <button class="main-btn blue-bg" style="padding: 10px 50px;" data-bs-toggle="modal" data-bs-target="#clearEntrust">取消委託設定</button>
+    <div class="modal fade main-popup clearEntrust" id="clearEntrust" tabindex="-1" aria-labelledby="clearEntrustLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="clearEntrustLabel">取消委託設定</h5>
+              <img class="close-btn" src="./public/img/icon_close.svg" data-bs-dismiss="modal" alt="">
+            </div>
+            <div class="modal-body">
+              <p class="content-title">請確認以下資料是否正確</p>
+                <div class="content">
+                    <ul>
+                        <li><span>提撥名稱：</span><span>一二三四五六</span></li>
+                        <li><span>標的名稱：</span><span>中菲電腦</span></li>
+                        <li><span>交易類型：</span><span>固定金額</span></li>
+                        <li><span>買進金額（新台幣元）：</span><span>500,000</span></li>
+                        <li><span>只是截止日：</span><span>2021/7/1</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn gray-border close" data-bs-dismiss="modal">關閉</button>
+              <button type="button" class="btn yellow-bg cancel">取消委託</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- jQuery -->
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>

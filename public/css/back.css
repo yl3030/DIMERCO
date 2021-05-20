@@ -5,7 +5,8 @@ main {
 
 .back-menu {
   width: 280px;
-  height: calc(100vh - 150px);
+  /* height: calc(100vh - 150px); */
+  min-height: calc(100vh - 355px);
   overflow: auto;
   background-color: #283a57;
 }
@@ -165,9 +166,9 @@ main {
 }
 
 .back-main .back-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 20px;
 }
 
 .back-main > div {
@@ -179,11 +180,20 @@ main {
   background-color: #fff;
   margin-bottom: 20px;
   overflow: hidden;
+  height: 95%;
 }
 
 .chart-box {
   padding: 20px 25px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.chart-box .vs-box {
+  height: calc(100% - 25px);
+}
+
+.chart-box .vp-box {
+  padding: 15px 50px;
 }
 
 .chart-box h4 {
@@ -208,102 +218,106 @@ main {
   font-size: 18px;
 }
 
-.back-table .bm-box div > span {
-  display: block;
-  padding: 20px 30px;
+.back-table .bm-box > div {
+  padding: 0 30px;
+}
+
+.back-table .bm-box > div > div {
   border-bottom: 1px solid #eceef1;
+  padding: 20px 0;
 }
 
-.back-table .bm-box div:first-child > span {
+.back-table .bm-box > div:first-child > div {
   border-bottom: 0;
 }
 
-.back-table .bm-box div:last-child > span {
+.back-table .bm-box > div:last-child > div {
   border-bottom: 0;
 }
 
-.back-table.contract-table .bm-box div > span:first-child {
+.back-table .bm-box > div > div > span {
+  padding-right: 15px;
+  display: block;
+}
+
+.back-table.contract-table .bm-box > div > div > span:first-child {
   width: 20%;
 }
 
-.back-table.contract-table .bm-box div > span:nth-child(2) {
+.back-table.contract-table .bm-box > div > div > span:nth-child(2) {
   width: 50%;
 }
 
-.back-table.contract-table .bm-box div > span:nth-child(2) span {
+.back-table.contract-table .bm-box > div > div > span:nth-child(2) p {
   overflow: hidden;
   display: -webkit-box !important;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  margin: 0;
 }
 
-.back-table.contract-table .bm-box div > span:nth-child(3) {
+.back-table.contract-table .bm-box > div > div > span:nth-child(3) {
   width: 30%;
 }
 
-.back-table.asset-table .bm-box div > span:first-child {
+.back-table.asset-table .bm-box > div > div > span:first-child {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box div > span:nth-child(2) {
+.back-table.asset-table .bm-box > div > div > span:nth-child(2) {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box div > span:nth-child(3) {
+.back-table.asset-table .bm-box > div > div > span:nth-child(3) {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box div > span:nth-child(4) {
+.back-table.asset-table .bm-box > div > div > span:nth-child(4) {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box div > span:nth-child(5) {
+.back-table.asset-table .bm-box > div > div > span:nth-child(5) {
   width: 20%;
   text-align: right;
 }
 
-.back-table.asset-table .bm-box div > span:nth-child(6) {
+.back-table.asset-table .bm-box > div > div > span:nth-child(6) {
   width: 20%;
 }
 
-.back-table.asset-table .bm-box div > span button {
+.back-table.asset-table .bm-box > div > div > span button {
   margin: 0 auto;
 }
 
-.back-table.asset-table .bm-box div > span button a {
-  background-color: #f2a346;
+.back-table.asset-table .bm-box > div > div > span button a {
   padding: 10px 15px;
 }
 
-.back-table.detail-table .bm-box div > span:first-child {
+.back-table.detail-table .bm-box > div > div > span:first-child {
   width: 14%;
 }
 
-.back-table.detail-table .bm-box div > span:nth-child(2) {
+.back-table.detail-table .bm-box > div > div > span:nth-child(2) {
   width: 18%;
 }
 
-.back-table.detail-table .bm-box div > span:nth-child(3) {
+.back-table.detail-table .bm-box > div > div > span:nth-child(3) {
   width: 18%;
 }
 
-.back-table.detail-table .bm-box div > span:nth-child(4) {
+.back-table.detail-table .bm-box > div > div > span:nth-child(4) {
   width: 25%;
-  text-align: center;
+  text-align: right;
 }
 
-.back-table.detail-table .bm-box div > span:nth-child(5) {
+.back-table.detail-table .bm-box > div > div > span:nth-child(5) {
   width: 25%;
   text-align: right;
 }
 
 .back-balance {
-    width: 250px;
-    margin: 70px auto 0;
-}
-
-.back-balance a {
-    background-color: #F3A345;
+  width: 250px;
+  margin: 70px auto 0;
 }
 
 .alert-box {
@@ -319,6 +333,7 @@ main {
   color: var(--blue-btn);
   font-weight: 700;
   margin-bottom: 20px;
+  font-size: 17px;
 }
 
 .alert-box p {
@@ -338,21 +353,27 @@ main {
   margin-bottom: 30px;
 }
 
-.detail-form label {
-  width: 18%;
-  padding: 15px 10px;
-}
-
-.detail-form label {
-  width: 18%;
-  text-align: center;
-  border-right: 1px solid #e4e4e4;
-  font-weight: 700;
-}
-
 .detail-form > div {
   border-right: 1px solid #e4e4e4;
-  padding: 15px 10px;
+  padding: 8px 10px;
+}
+
+.detail-form > div:first-child {
+  width: 21%;
+}
+
+.detail-form label {
+  text-align: center;
+  font-weight: 700;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.detail-form > div:last-child {
+  border: 0;
+  padding: 0 10px;
 }
 
 .detail-form > div img.select-icon {
@@ -366,8 +387,20 @@ main {
 }
 
 .detail-form .classification {
-  width: 18%;
+  width: 15%;
   justify-content: center;
+}
+
+.detail-form .classification .select-box {
+  width: calc(100% - 35px);
+  position: relative;
+}
+
+.detail-form .classification .select-box img.arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
 }
 
 .detail-form #classification {
@@ -379,6 +412,11 @@ main {
   color: var(--orange-btn);
   margin-right: 3px;
   outline: none;
+  width: calc(100% - 15px);
+}
+
+.detail-form .date-select {
+  position: relative;
 }
 
 .detail-form .start-date {
@@ -389,8 +427,146 @@ main {
   width: 25%;
 }
 
-.detail-form button {
+.detail-form .daterange {
+  border: 0;
+  background-color: transparent;
+  color: var(--orange-btn);
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-left: 40px;
+}
+
+.detail-form .btn-box {
   width: 14%;
+  height: 100%;
+}
+
+.detail-form .btn-box button {
+  width: 100%;
+  height: 100%;
+  padding: 15px 0;
+  background-color: #f2a346;
+  color: #fff;
+  border-radius: 100px;
+  display: block;
+}
+
+/* download */
+.download-box .select-box {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid var(--blue-btn);
+  width: 350px;
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.download-box .select-box select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+  margin-right: 3px;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.download-box .select-box img.arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  width: 8px;
+}
+
+.download-box button {
+  background-color: var(--blue-btn);
+  color: #fff;
+  padding: 12px 85px;
+  border-radius: 10px;
+}
+
+/* apply */
+.apply-box .pdf-box {
+  width: 100%;
+  padding: 30px 15px 20px;
+  background-color: var(--gray-btn);
+  border-radius: 30px;
+  margin-bottom: 30px;
+}
+
+.apply-box .agree-box {
+  margin: 0 auto 50px;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.apply-box .agree-box > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #b3b3b3;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* .apply-box .agree-box>div i {
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  color: var(--orange-btn);
+  text-align: center;
+  line-height: 20px;
+} */
+
+.apply-box .agree-box > div.active svg {
+  opacity: 1;
+}
+
+.apply-box .agree-box > div svg {
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.apply-box .agree-box > div svg path {
+  fill: var(--orange-btn);
+}
+
+.apply-box .agree-box span {
+  margin-bottom: 0;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.pr {
+  width: 100%;
+  height: 0;
+  padding-bottom: 40%;
+  position: relative;
+}
+
+.pr #proportionReport {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 @media screen and (min-width: 992px) {

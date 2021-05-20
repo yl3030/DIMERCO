@@ -7953,24 +7953,24 @@
       plugins: {
         legend: {
           labels: {
-            generateLabels(chart) {
-              const data = chart.data;
-              if (data.labels.length && data.datasets.length) {
-                return data.labels.map((label, i) => {
-                  const meta = chart.getDatasetMeta(0);
-                  const style = meta.controller.getStyle(i);
-                  return {
-                    text: label,
-                    fillStyle: style.backgroundColor,
-                    strokeStyle: style.borderColor,
-                    lineWidth: style.borderWidth,
-                    hidden: !chart.getDataVisibility(i),
-                    index: i
-                  };
-                });
-              }
-              return [];
-            }
+            // generateLabels(chart) {
+            //   const data = chart.data;
+            //   if (data.labels.length && data.datasets.length) {
+            //     return data.labels.map((label, i) => {
+            //       const meta = chart.getDatasetMeta(0);
+            //       const style = meta.controller.getStyle(i);
+            //       return {
+            //         text: label,
+            //         fillStyle: style.backgroundColor,
+            //         strokeStyle: style.borderColor,
+            //         lineWidth: style.borderWidth,
+            //         hidden: !chart.getDataVisibility(i),
+            //         index: i
+            //       };
+            //     });
+            //   }
+            //   return [];
+            // }
           },
           onClick(e, legendItem, legend) {
             legend.chart.toggleDataVisibility(legendItem.index);
@@ -8243,24 +8243,24 @@
       plugins: {
         legend: {
           labels: {
-            generateLabels(chart) {
-              const data = chart.data;
-              if (data.labels.length && data.datasets.length) {
-                return data.labels.map((label, i) => {
-                  const meta = chart.getDatasetMeta(0);
-                  const style = meta.controller.getStyle(i);
-                  return {
-                    text: label,
-                    fillStyle: style.backgroundColor,
-                    strokeStyle: style.borderColor,
-                    lineWidth: style.borderWidth,
-                    hidden: !chart.getDataVisibility(i),
-                    index: i
-                  };
-                });
-              }
-              return [];
-            }
+            // generateLabels(chart) {
+            //   const data = chart.data;
+            //   if (data.labels.length && data.datasets.length) {
+            //     return data.labels.map((label, i) => {
+            //       const meta = chart.getDatasetMeta(0);
+            //       const style = meta.controller.getStyle(i);
+            //       return {
+            //         text: label,
+            //         fillStyle: style.backgroundColor,
+            //         strokeStyle: style.borderColor,
+            //         lineWidth: style.borderWidth,
+            //         hidden: !chart.getDataVisibility(i),
+            //         index: i
+            //       };
+            //     });
+            //   }
+            //   return [];
+            // }
           },
           onClick(e, legendItem, legend) {
             legend.chart.toggleDataVisibility(legendItem.index);
@@ -8379,6 +8379,7 @@
         }
       }
     };
+    
     
     class ScatterController extends LineController {
     }
@@ -10289,31 +10290,31 @@
           color: (ctx) => ctx.chart.options.color,
           boxWidth: 40,
           padding: 10,
-          generateLabels(chart) {
-            const datasets = chart.data.datasets;
-            const {labels: {usePointStyle, pointStyle, textAlign, color}} = chart.legend.options;
-            return chart._getSortedDatasetMetas().map((meta) => {
-              const style = meta.controller.getStyle(usePointStyle ? 0 : undefined);
-              const borderWidth = toPadding(style.borderWidth);
-              return {
-                text: datasets[meta.index].label,
-                fillStyle: style.backgroundColor,
-                fontColor: color,
-                hidden: !meta.visible,
-                lineCap: style.borderCapStyle,
-                lineDash: style.borderDash,
-                lineDashOffset: style.borderDashOffset,
-                lineJoin: style.borderJoinStyle,
-                lineWidth: (borderWidth.width + borderWidth.height) / 4,
-                strokeStyle: style.borderColor,
-                pointStyle: pointStyle || style.pointStyle,
-                rotation: style.rotation,
-                textAlign: textAlign || style.textAlign,
-                borderRadius: 0,
-                datasetIndex: meta.index
-              };
-            }, this);
-          }
+        //   generateLabels(chart) {
+        //     const datasets = chart.data.datasets;
+        //     const {labels: {usePointStyle, pointStyle, textAlign, color}} = chart.legend.options;
+        //     return chart._getSortedDatasetMetas().map((meta) => {
+        //       const style = meta.controller.getStyle(usePointStyle ? 0 : undefined);
+        //       const borderWidth = toPadding(style.borderWidth);
+        //       return {
+        //         text: datasets[meta.index].label,
+        //         fillStyle: style.backgroundColor,
+        //         fontColor: color,
+        //         hidden: !meta.visible,
+        //         lineCap: style.borderCapStyle,
+        //         lineDash: style.borderDash,
+        //         lineDashOffset: style.borderDashOffset,
+        //         lineJoin: style.borderJoinStyle,
+        //         lineWidth: (borderWidth.width + borderWidth.height) / 4,
+        //         strokeStyle: style.borderColor,
+        //         pointStyle: pointStyle || style.pointStyle,
+        //         rotation: style.rotation,
+        //         textAlign: textAlign || style.textAlign,
+        //         borderRadius: 0,
+        //         datasetIndex: meta.index
+        //       };
+        //     }, this);
+        //   }
         },
         title: {
           color: (ctx) => ctx.chart.options.color,

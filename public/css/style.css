@@ -308,6 +308,8 @@ main {
   border-radius: 8px;
   display: block;
   margin: 30px auto 100px;
+  /* background-color: var(--blue-btn); */
+  color: #fff;
 }
 
 .main-btn a {
@@ -315,5 +317,144 @@ main {
   display: block;
   padding: 10px 50px;
   color: #fff;
+  /* background-color: var(--blue-btn); */
+}
+
+.main-btn.nolink {
+  padding: 10px 50px;
+}
+
+button.blue-bg {
   background-color: var(--blue-btn);
+}
+
+button.gray-border {
+  color: #9f9f9f;
+  border: 2px solid #ccc;
+  background-color: transparent;
+}
+
+button.yellow-bg {
+  color: #fff;
+  border: 2px solid #F2A346;
+  background-color: #F2A346;
+}
+
+/* popup */
+.main-popup .modal-header {
+  background-color: #F5F5F5;
+  padding: 15px;
+  border: 0;
+  position: relative;
+}
+
+.main-popup .modal-header h5 {
+  text-align: center;
+  color: var(--blue-btn);
+  font-weight: 700;
+  width: 100%;
+}
+
+.main-popup .modal-header .close-btn {
+  /* font-size: 35px; */
+  width: 35px;
+  color: #F2A248;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.main-popup .modal-body {
+  padding: 40px 45px 0;
+}
+
+.main-popup .modal-body p.content-title {
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: 700;
+}
+
+.main-popup.clearEntrust .modal-body .content {
+  padding: 40px 0 60px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.main-popup.clearEntrust .modal-body .content ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.main-popup.clearEntrust .modal-body .content ul li {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-popup.clearEntrust .modal-body .content ul li span {
+  width: 50%;
+}
+
+.main-popup.clearEntrust .modal-body .content ul li span:first-child {
+  color: #9a9a9a;
+  text-align: right;
+}
+
+.main-popup.clearEntrust .modal-body .content ul li span:nth-child(2) {
+  color: #F1A348;
+}
+
+.main-popup.cash .modal-body .content {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.main-popup.cash .modal-body .content>div {
+  width: 30%;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  padding: 30px 0;
+  cursor: pointer;
+}
+
+.main-popup.cash .modal-body .content>div img {
+  width: 50%;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.main-popup.cash .modal-body .content>div p {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.main-popup.apply .modal-body {
+  text-align: center;
+}
+
+.main-popup .modal-footer {
+  border: 0;
+  text-align: center;
+  padding: 30px 0;
+  justify-content: center;
+}
+
+.main-popup .modal-footer button {
+  width: 250px;
+  padding: 10px 0;
+  border-radius: 10px;
+  margin: 0 10px;
+  outline: none !important;
+}
+
+@media screen and (min-width: 576px) {
+  .modal-dialog {
+    max-width: 800px;
+    margin: 5rem auto 0;
+  }
 }

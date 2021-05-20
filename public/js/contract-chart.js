@@ -26,7 +26,15 @@ var pnChart = new Chart(peopleNum, {
                         return value + "人";
                     },
                 },
+                grid: {
+                    display: false,
+                  },
             },
+            x: {
+                grid: {
+                  display: false,
+                },
+              },
         }
     }
 });
@@ -55,7 +63,15 @@ var plChart = new Chart(peopleLength, {
                         return value + "人";
                     },
                 },
-            }
+                grid: {
+                    display: false,
+                  },
+            },
+            x: {
+                grid: {
+                  display: false,
+                },
+              },
         }
     }
 });
