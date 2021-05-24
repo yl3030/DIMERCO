@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./public/css/style.css" />
     <link rel="stylesheet" href="./public/css/back.css" />
 
-    <script src="./public/js/papaparse.min.js"></script>
   </head>
   <body>
     <header>
@@ -430,24 +429,30 @@
             <div class="bm-box chart-box">
               <h4>資產價值統計(近六個月)</h4>
               <div class="flex-style vs-box">
-                <canvas id="valueStatistics"></canvas>
+                <div class="vs">
+                  <svg id="valueStatistics"></svg>
+                </div>
+                <!-- <canvas id="valueStatistics"></canvas> -->
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="bm-box chart-box">
               <h4>資產價值比例</h4>
-              <div class="vp-box">
-                <canvas id="valueProportion"></canvas>
+              <div class="vp">
+                <svg id="valueProportion"></svg>
               </div>
+              <!-- <div class="vp-box">
+                <canvas id="valueProportion"></canvas>
+              </div> -->
             </div>
           </div>
           <div class="col-lg-12">
             <div class="bm-box chart-box">
               <h4>標的比重及投報</h4>
               <div class="pr">
-              <svg id="proportionReport"></svg>
-            </div>
+                <svg id="proportionReport"></svg>
+              </div>
             </div>
           </div>
           <div class="back-table yellow-table asset-table col-lg-12">
@@ -541,15 +546,13 @@
     <!-- Bootstrap JS -->
     <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./public/js/bootstrap/bootstrap.min.js"></script>
-    <!-- chart JS -->
-    <script src="./public/js/chart/chart.js"></script>
     <!-- d3 JS -->
     <script src="./public/js/d3/d3.min.js"></script>
 
     <!-- my JS -->
-    <script src="./public/js/balance-chart.js"></script>
+    <script src="./public/js/valueStatistics.js"></script>
     <script src="./public/js/proportion.js"></script>
+    <script src="./public/js/valueProportion.js"></script>
     <script src="./public/js/index.js"></script>
-
   </body>
 </html>

@@ -312,7 +312,7 @@
 
 .new-content {
   padding: 18px 0;
-  display: none;
+  display: block;
   border-top: 1px solid #EDEDED;
 }
 

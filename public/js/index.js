@@ -3,20 +3,6 @@ var SecondMenuNum = $(".second-menu").children("li").length;
 var SecondMenuWidth = 100/SecondMenuNum;
 $(".second-menu").children("li").css("width",SecondMenuWidth+"%");
 
-// new
-$(".tab-box").children("button").click(function(){
-    $(".tab-box").children("button").removeClass("active");
-    $(this).addClass("active");
-    $(".new-content").hide();
-    if($(this).hasClass("ad")){
-        $(".new-content.new-ad").show();
-    }else if($(this).hasClass("speech")){
-        $(".new-content.new-speech").show();
-    }else if($(this).hasClass("paper")){
-        $(".new-content.new-paper").show();
-    }
-})
-
 // back-menu
 $(".contract-list").children("ul").children("li").children("div").click(function(){
     if($(this).hasClass("active")){
@@ -42,3 +28,24 @@ $(".agree-box").click(function(){
         $(".agree-btn").attr('disabled',false);
     }
 })
+
+// select-box
+$(".select-box.select").click(function(){
+    $(".sb").slideToggle(100);
+})
+$(document).click(function (event) {
+	var d_con = $(".select-box");
+	if (!d_con.is(event.target) && d_con.has(event.target).length === 0) {
+		$(".sb").slideUp(100);
+	}
+});
+$(".sb").children(".select-box").click(function(){
+    var select_type = $(this).children(".st").text();
+    $(".sts").empty();
+    $(".sts").append(select_type);
+    $(".sb").slideUp(100);
+})
+
+// link
+$("a.no-link").attr("href","javascript:void(0)");
+$("a.blank-link").attr("target","_blank");

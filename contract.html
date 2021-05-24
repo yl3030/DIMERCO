@@ -424,13 +424,17 @@
           <div class="col-lg-6">
             <div class="bm-box chart-box">
               <h4>員工統計人數</h4>
-              <canvas id="peopleNum"></canvas>
+              <div class="pn">
+                <svg id="peopleNum"></svg>
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="bm-box chart-box">
               <h4>員工年資統計</h4>
-              <canvas id="peopleLength"></canvas>
+              <div class="pl">
+                <canvas id="peopleLength"></canvas>
+              </div>
             </div>
           </div>
           <div class="back-table blue-table contract-table col-lg-12">
@@ -446,7 +450,7 @@
                 <div class="flex-style">
                   <span>A23456789012</span>
                   <span>
-                    <p> 持股二三四五六七八九十一二 </p>
+                    <p>持股二三四五六七八九十一二</p>
                   </span>
                   <span>1,234,567,890,123</span>
                 </div>
@@ -455,8 +459,8 @@
                 <div class="flex-style">
                   <span>B23456789012</span>
                   <span>
-                    <p
-                      >儲蓄二三四五六七八九十一二儲蓄二三四五六七八九十一二儲蓄二三四五六七八九十一二
+                    <p>
+                      儲蓄二三四五六七八九十一二儲蓄二三四五六七八九十一二儲蓄二三四五六七八九十一二
                     </p>
                   </span>
                   <span>1,234,567,890,123</span>
@@ -466,7 +470,7 @@
                 <div class="flex-style">
                   <span>C23456789012</span>
                   <span>
-                    <p>自選二三四五六七八九十一二 </p>
+                    <p>自選二三四五六七八九十一二</p>
                   </span>
                   <span>1,234,567,890,123</span>
                 </div>
@@ -475,7 +479,7 @@
                 <div class="flex-style">
                   <span>D23456789012</span>
                   <span>
-                    <p>限制二三四五六七八九十一二 </p>
+                    <p>限制二三四五六七八九十一二</p>
                   </span>
                   <span>1,234,567,890,123</span>
                 </div>
@@ -532,8 +536,11 @@
     <script src="./public/js/bootstrap/bootstrap.min.js"></script>
     <!-- chart JS -->
     <script src="./public/js/chart/chart.js"></script>
+    <!-- d3 JS -->
+    <script src="./public/js/d3/d3.min.js"></script>
     <!-- my JS -->
-    <script src="./public/js/contract-chart.js"></script>
+    <script src="./public/js/peopleNum.js"></script>
+    <script src="./public/js/peopleLength.js"></script>
     <script src="./public/js/index.js"></script>
   </body>
 </html>
