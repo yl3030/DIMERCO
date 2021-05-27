@@ -8,11 +8,11 @@ var PNheight = pn_height - pn_margin.bottom - pn_margin.top;
 // 資料
 var PNdata = [
   { date: "2020/10", num: 20 },
-  { date: "2020/11", num: 25 },
-  { date: "2020/12", num: 40 },
-  { date: "2021/01", num: 39 },
-  { date: "2021/02", num: 45 },
-  { date: "2021/03", num: 50 },
+  { date: "2020/11", num: 30 },
+  { date: "2020/12", num: 45 },
+  { date: "2021/01", num: null },
+  { date: "2021/02", num: null },
+  { date: "2021/03", num: null },
 ];
 
 //   圖表定義
@@ -32,7 +32,7 @@ PNsvg.append("rect")
   .attr("width", PNwidth / 5)
   .attr("height", PNheight)
   .attr("fill", "#F7F7F9")
-  .attr("transform", "translate(" + bg_position2  + "," + pn_margin.top + ")");
+  .attr("transform", "translate(" + bg_position2 + "," + pn_margin.top + ")");
 var bg_position3 = pn_margin.left + PNwidth * 0.72;
 PNsvg.append("rect")
   .attr("width", PNwidth / 5)
@@ -51,6 +51,7 @@ var parseTime = d3.timeParse("%Y/%m");
 //   x、y軸範圍
 PNx.domain(
   d3.extent(PNdata, function (d) {
+    console.log(parseTime(d.date));
     return parseTime(d.date);
   })
 );
@@ -64,6 +65,9 @@ var line = d3
   })
   .y(function (d) {
     return PNy(d.num);
+  })
+  .defined(function (d) {
+    return d.num != null;
   });
 
 // 圖表位置
@@ -114,18 +118,32 @@ PNsvg.select("g").select(".yAxis").select("path").style("stroke", "#C5C5C5");
 
 // 點設定
 PNsvg.selectAll("myCircles")
-  .data(PNdata)
+  .data(
+    PNdata.filter(function (d) {
+      return d;
+    })
+  )
   .enter()
   .append("circle")
-  .attr("fill", "#6E9FEE")  //點顏色
-  .attr("stroke", "none")  //無外框
-  .attr("cx", function (d) {  //x座標
+  .attr("fill", "#6E9FEE") //點顏色
+  .attr("stroke", "none") //無外框
+  .attr("cx", function (d) {
+    //x座標
     return PNx(parseTime(d.date));
   })
-  .attr("cy", function (d) {  //y座標
+  .attr("cy", function (d) {
+    // console.log(PNy(d.num));
     return PNy(d.num);
   })
-  .attr("r", 6) //點尺寸
+  .attr("r", function (d) {
+    if (PNy(d.num) == undefined) {
+      console.log(PNy(d.num));
+      return 0;
+    } else {
+      console.log(PNy(d.num));
+      return 6;
+    }
+  })
   .attr("transform", "translate(" + pn_margin.left + "," + pn_margin.top + ")"); //位移量
 
 $(window).on("resize", function () {
@@ -186,6 +204,9 @@ $(window).on("resize", function () {
     })
     .y(function (d) {
       return PNy(d.num);
+    })
+    .defined(function (d) {
+      return d.num != null;
     });
 
   // 圖表位置
@@ -247,7 +268,15 @@ $(window).on("resize", function () {
     .attr("cy", function (d) {
       return PNy(d.num);
     })
-    .attr("r", 6)
+    .attr("r", function (d) {
+      if (PNy(d.num) == undefined) {
+        console.log(PNy(d.num));
+        return 0;
+      } else {
+        console.log(PNy(d.num));
+        return 6;
+      }
+    })
     .attr(
       "transform",
       "translate(" + pn_margin.left + "," + pn_margin.top + ")"

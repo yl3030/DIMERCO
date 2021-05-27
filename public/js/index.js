@@ -20,11 +20,11 @@ $(".alert-box").children("div").children("p").append("基金交易係以長期�
 
 // agree-box
 $(".agree-box").click(function(){
-    if($(this).children("div").hasClass("active")){
-        $(this).children("div").removeClass("active");
+    if($(this).children(".check-box").hasClass("active")){
+        $(this).children(".check-box").removeClass("active");
         $(".agree-btn").attr('disabled',true);
     }else{
-        $(this).children("div").addClass("active");
+        $(this).children(".check-box").addClass("active");
         $(".agree-btn").attr('disabled',false);
     }
 })

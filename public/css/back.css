@@ -5,7 +5,6 @@ main {
 
 .back-menu {
   width: 280px;
-  /* height: calc(100vh - 150px); */
   min-height: calc(100vh - 355px);
   overflow: auto;
   background-color: #283a57;
@@ -149,7 +148,6 @@ main {
 .back-main {
   width: calc(100vw - 280px);
   max-width: calc(50vw + 380px);
-  /* height: calc(100vh - 150px); */
   overflow: auto;
   padding-left: 30px;
   padding-right: var(--bs-gutter-x, 0.75rem);
@@ -218,37 +216,37 @@ main {
   font-size: 18px;
 }
 
-.back-table .bm-box > div {
+.back-table .bm-box .bm {
   padding: 0 30px;
 }
 
-.back-table .bm-box > div > div {
+.back-table .bm-box .bm .inner {
   border-bottom: 1px solid #eceef1;
   padding: 20px 0;
 }
 
-.back-table .bm-box > div:first-child > div {
+.back-table .bm-box .bm:first-child .inner {
   border-bottom: 0;
 }
 
-.back-table .bm-box > div:last-child > div {
+.back-table .bm-box .bm:last-child .inner {
   border-bottom: 0;
 }
 
-.back-table .bm-box > div > div > span {
+.back-table .bm-box .bm .inner > span {
   padding-right: 15px;
   display: block;
 }
 
-.back-table.contract-table .bm-box > div > div > span:first-child {
+.back-table.contract-table .bm-box .bm .inner  span.number {
   width: 20%;
 }
 
-.back-table.contract-table .bm-box > div > div > span:nth-child(2) {
+.back-table.contract-table .bm-box .bm .inner  span.name {
   width: 50%;
 }
 
-.back-table.contract-table .bm-box > div > div > span:nth-child(2) p {
+.back-table.contract-table .bm-box .bm .inner span.name p {
   overflow: hidden;
   display: -webkit-box !important;
   -webkit-box-orient: vertical;
@@ -256,61 +254,61 @@ main {
   margin: 0;
 }
 
-.back-table.contract-table .bm-box > div > div > span:nth-child(3) {
+.back-table.contract-table .bm-box .bm .inner span.value {
   width: 30%;
 }
 
-.back-table.asset-table .bm-box > div > div > span:first-child {
+.back-table.asset-table .bm-box .bm .inner span.ref-name {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box > div > div > span:nth-child(2) {
+.back-table.asset-table .bm-box .bm .inner span.stock-name {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box > div > div > span:nth-child(3) {
+.back-table.asset-table .bm-box .bm .inner span.date {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box > div > div > span:nth-child(4) {
+.back-table.asset-table .bm-box .bm .inner span.number {
   width: 15%;
 }
 
-.back-table.asset-table .bm-box > div > div > span:nth-child(5) {
+.back-table.asset-table .bm-box .bm .inner span.money {
   width: 20%;
   text-align: right;
 }
 
-.back-table.asset-table .bm-box > div > div > span:nth-child(6) {
+.back-table.asset-table .bm-box .bm .inner span.trans-btn {
   width: 20%;
 }
 
-.back-table.asset-table .bm-box > div > div > span button {
+.back-table.asset-table .bm-box .bm .inner span.trans-btn button {
   margin: 0 auto;
 }
 
-.back-table.asset-table .bm-box > div > div > span button a {
+.back-table.asset-table .bm-box .bm .inner span.trans-btn button a {
   padding: 10px 15px;
 }
 
-.back-table.detail-table .bm-box > div > div > span:first-child {
+.back-table.detail-table .bm-box .bm .inner span.date {
   width: 14%;
 }
 
-.back-table.detail-table .bm-box > div > div > span:nth-child(2) {
+.back-table.detail-table .bm-box .bm .inner span.name {
   width: 18%;
 }
 
-.back-table.detail-table .bm-box > div > div > span:nth-child(3) {
+.back-table.detail-table .bm-box .bm .inner span.type {
   width: 18%;
 }
 
-.back-table.detail-table .bm-box > div > div > span:nth-child(4) {
+.back-table.detail-table .bm-box .bm .inner span.money {
   width: 25%;
   text-align: right;
 }
 
-.back-table.detail-table .bm-box > div > div > span:nth-child(5) {
+.back-table.detail-table .bm-box .bm .inner span.stock {
   width: 25%;
   text-align: right;
 }
@@ -353,16 +351,16 @@ main {
   margin-bottom: 30px;
 }
 
-.detail-form > div {
+.detail-form .df {
   border-right: 1px solid #e4e4e4;
   padding: 8px 10px;
 }
 
-.detail-form > div:first-child {
+.detail-form .df.df-title {
   width: 21%;
 }
 
-.detail-form label {
+.detail-form .df-title label {
   text-align: center;
   font-weight: 700;
   overflow: hidden;
@@ -371,17 +369,17 @@ main {
   -webkit-line-clamp: 1;
 }
 
-.detail-form > div:last-child {
+.detail-form .btn-box {
   border: 0;
   padding: 0 10px;
 }
 
-.detail-form > div img.select-icon {
+.detail-form .df img.select-icon {
   width: 20px;
   margin-right: 15px;
 }
 
-.detail-form > div img.arrow {
+.detail-form .df img.arrow {
   width: 8px;
   transform: rotate(90deg);
 }
@@ -524,7 +522,7 @@ main {
   cursor: pointer;
 }
 
-.apply-box .agree-box > div {
+.apply-box .agree-box .check-box {
   width: 20px;
   height: 20px;
   border-radius: 5px;
@@ -535,20 +533,11 @@ main {
   position: relative;
 }
 
-/* .apply-box .agree-box>div i {
-  width: 20px;
-  height: 20px;
-  font-size: 15px;
-  color: var(--orange-btn);
-  text-align: center;
-  line-height: 20px;
-} */
-
-.apply-box .agree-box > div.active svg {
+.apply-box .agree-box .check-box.active svg {
   opacity: 1;
 }
 
-.apply-box .agree-box > div svg {
+.apply-box .agree-box .check-box svg {
   width: 20px;
   position: absolute;
   top: 50%;
@@ -558,7 +547,7 @@ main {
   transition: 0.3s;
 }
 
-.apply-box .agree-box > div svg path {
+.apply-box .agree-box .check-box svg path {
   fill: var(--orange-btn);
 }
 

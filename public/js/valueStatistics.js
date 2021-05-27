@@ -68,6 +68,8 @@ var line = d3
   })
   .y(function (d) {
     return VSy(d.num);
+  }).defined(function (d) {
+    return d.num != null;
   });
 
 // 圖表位置
@@ -129,7 +131,15 @@ VSsvg.selectAll("myCircles")
   .attr("cy", function (d) {
     return VSy(d.num);
   })
-  .attr("r", 6)
+  .attr("r", function (d) {
+    if (VSy(d.num) == undefined) {
+      console.log(VSy(d.num));
+      return 0;
+    } else {
+      console.log(VSy(d.num));
+      return 6;
+    }
+  })
   .attr("transform", "translate(" + vs_margin.left + "," + vs_margin.top + ")");
 
 
@@ -196,6 +206,8 @@ $(window).on("resize", function () {
     })
     .y(function (d) {
       return VSy(d.num);
+    }).defined(function (d) {
+      return d.num != null;
     });
 
   // 圖表位置
@@ -257,7 +269,15 @@ $(window).on("resize", function () {
     .attr("cy", function (d) {
       return VSy(d.num);
     })
-    .attr("r", 6)
+    .attr("r", function (d) {
+      if (VSy(d.num) == undefined) {
+        console.log(VSy(d.num));
+        return 0;
+      } else {
+        console.log(VSy(d.num));
+        return 6;
+      }
+    })
     .attr(
       "transform",
       "translate(" + vs_margin.left + "," + vs_margin.top + ")"

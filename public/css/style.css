@@ -308,7 +308,6 @@ main {
   border-radius: 8px;
   display: block;
   margin: 30px auto 100px;
-  /* background-color: var(--blue-btn); */
   color: #fff;
 }
 
@@ -317,7 +316,6 @@ main {
   display: block;
   padding: 10px 50px;
   color: #fff;
-  /* background-color: var(--blue-btn); */
 }
 
 .main-btn.nolink {
