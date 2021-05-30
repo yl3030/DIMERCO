@@ -78,12 +78,16 @@ PRsvg.append("text")
   .style("color", "#4E4E4E")
   .text("投資報酬率");
 
+
+  
+var tick_x_num = 5;
+var tick_y_num = 5;
 // Add the X Axis
 PRg.append("g")
   .attr("transform", "translate(0," + pr_height + ")")
   .style("color", "#4E4E4E")
   .style("font-size", "12px")
-  .call(d3.axisBottom(pr_xScale).ticks(5))
+  .call(d3.axisBottom(pr_xScale).ticks(tick_x_num))
   .attr("class", "xAxis")
   .selectAll("g")
   .select("text")
@@ -103,7 +107,7 @@ PRsvg.select("g")
 PRg.append("g")
   .style("color", "#4E4E4E")
   .style("font-size", "12px")
-  .call(d3.axisLeft(pr_yScale).ticks(5))
+  .call(d3.axisLeft(pr_yScale).ticks(tick_y_num))
   .attr("class", "yAxis")
   .selectAll("g")
   .select("text")
@@ -140,10 +144,10 @@ PRsvg.append("rect")
 
 // 網格
 function make_x_gridlines() {
-  return d3.axisBottom(pr_xScale).ticks(5);
+  return d3.axisBottom(pr_xScale).ticks(tick_x_num);
 }
 function make_y_gridlines() {
-  return d3.axisLeft(pr_yScale).ticks(5);
+  return d3.axisLeft(pr_yScale).ticks(tick_y_num);
 }
 PRsvg.append("g")
   .attr("class", "grid")
@@ -293,7 +297,7 @@ $(window).on("resize", function () {
     .attr("transform", "translate(0," + pr_height + ")")
     .style("color", "#4E4E4E")
     .style("font-size", "12px")
-    .call(d3.axisBottom(pr_xScale).ticks(5))
+    .call(d3.axisBottom(pr_xScale).ticks(tick_x_num))
     .attr("class", "xAxis")
     .selectAll("g")
     .select("text")
@@ -313,7 +317,7 @@ $(window).on("resize", function () {
   PRg.append("g")
     .style("color", "#4E4E4E")
     .style("font-size", "12px")
-    .call(d3.axisLeft(pr_yScale).ticks(5))
+    .call(d3.axisLeft(pr_yScale).ticks(tick_y_num))
     .attr("class", "yAxis")
     .selectAll("g")
     .select("text")
@@ -356,10 +360,10 @@ $(window).on("resize", function () {
 
   // 網格
   function make_x_gridlines() {
-    return d3.axisBottom(pr_xScale).ticks(5);
+    return d3.axisBottom(pr_xScale).ticks(tick_x_num);
   }
   function make_y_gridlines() {
-    return d3.axisLeft(pr_yScale).ticks(5);
+    return d3.axisLeft(pr_yScale).ticks(tick_y_num);
   }
   PRsvg.append("g")
     .attr("class", "grid")
