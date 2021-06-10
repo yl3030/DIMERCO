@@ -1,6 +1,6 @@
 // 資料
 let VPdata = [
-  { val: 3700000, name: "基金" },
+  { val: 400000, name: "基金" },
   { val: 2939000, name: "股票" },
   { val: 1000000, name: "現金" },
 ];
@@ -26,6 +26,7 @@ let dataNew = d3.map(VPdata, function (d) {
   return d.val;
 });
 let arcs = VPg.selectAll("arc").data(pie(dataNew)).enter().append("g");
+let arcs_text = VPg.selectAll("arc").data(pie(dataNew)).enter().append("g");
 
 // 顏色
 var color = d3
@@ -39,15 +40,20 @@ arcs
   })
   .attr("d", arc);
 
+  arcs_text
+  .append("path")
+  .attr("fill","transparent")
+  .attr("d", arc);
+
 //   顯示資訊位置
-arcs
+arcs_text
   .append("text")
   .attr("text-anchor", "middle")
   .attr("transform", (d, i) => {
     return "translate(" + arc.centroid(d) + ")";
   });
 // 資料名稱(基金、股票、現金)
-arcs
+arcs_text
   .select("text")
   .append("tspan")
   .attr("y", "1.3rem")
@@ -57,7 +63,7 @@ arcs
     return VPdata[i].name;
   });
 // 數值
-arcs
+arcs_text
   .select("text")
   .append("tspan")
   .attr("x", "0")
@@ -75,7 +81,7 @@ for (i = 0; i <= dataLength; i++) {
   total = total + dataNew[i];
   console.log(total);
 }
-arcs
+arcs_text
   .select("text")
   .append("tspan")
   .attr("x", "0")
@@ -89,6 +95,10 @@ arcs
     return p_output + "%";
   });
 
+
+
+
+// resize
 $(window).on("resize", function () {
   $("#valueProportion").empty();
 
@@ -113,6 +123,7 @@ $(window).on("resize", function () {
     return d.val;
   });
   let arcs = VPg.selectAll("arc").data(pie(dataNew)).enter().append("g");
+  let arcs_text = VPg.selectAll("arc").data(pie(dataNew)).enter().append("g");
 
   // 顏色
   color = d3
@@ -126,15 +137,20 @@ $(window).on("resize", function () {
     })
     .attr("d", arc);
 
+    arcs_text
+  .append("path")
+  .attr("fill","transparent")
+  .attr("d", arc);
+
   //   顯示資訊位置
-  arcs
+  arcs_text
     .append("text")
     .attr("text-anchor", "middle")
     .attr("transform", (d, i) => {
       return "translate(" + arc.centroid(d) + ")";
     });
   // 資料名稱(基金、股票、現金)
-  arcs
+  arcs_text
     .select("text")
     .append("tspan")
     .attr("y", "1.3rem")
@@ -144,7 +160,7 @@ $(window).on("resize", function () {
       return VPdata[i].name;
     });
   // 數值
-  arcs
+  arcs_text
     .select("text")
     .append("tspan")
     .attr("x", "0")
@@ -162,7 +178,7 @@ $(window).on("resize", function () {
     total = total + dataNew[i];
     console.log(total);
   }
-  arcs
+  arcs_text
     .select("text")
     .append("tspan")
     .attr("x", "0")

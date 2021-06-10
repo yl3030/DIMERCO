@@ -28,6 +28,9 @@ $(".agree-box").click(function(){
         $(".agree-btn").attr('disabled',false);
     }
 })
+$(".pdf-box").children("iframe").on("scroll",function(){
+    console.log("scroll");
+});
 
 // select-box
 $(".select-box.select").click(function(){

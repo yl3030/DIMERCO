@@ -450,6 +450,93 @@ button.yellow-bg {
   outline: none !important;
 }
 
+/* mask */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 300;
+  display: none;
+}
+
+.mask.open {
+  display: block;
+}
+
+.mask .mask-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.mask .mask-content .dot {
+  opacity: 0;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.mask .mask-content .dot1 {
+  animation-name: mask1;
+}
+
+.mask .mask-content .dot2 {
+  animation-name: mask2;
+}
+
+.mask .mask-content .dot3 {
+  animation-name: mask3;
+}
+
+@keyframes mask1 {
+  0% {
+    opacity: 1;
+  }
+  33.3333% {
+    opacity: 1;
+  }
+  66.6666% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mask2 {
+  0% {
+    opacity: 0;
+  }
+  33.3333% {
+    opacity: 0;
+  }
+  66.6666% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mask3 {
+  0% {
+    opacity: 0;
+  }
+  33.3333% {
+    opacity: 0;
+  }
+  66.6666% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 @media screen and (min-width: 576px) {
   .modal-dialog {
     max-width: 800px;
