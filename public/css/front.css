@@ -55,11 +55,11 @@
 }
 
 .banner .arrow.Bprev {
-  left: 44vw;
+  left: calc(50vw - 65px);
 }
 
 .banner .arrow.Bnext {
-  right: 44vw;
+  right: calc(50vw - 65px);
 }
 
 .banner .arrow.Bprev img {
@@ -81,8 +81,11 @@
   border-radius: 5px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   z-index: 15;
+  padding-top: 45px;
+  padding-bottom: 45px;
 }
 
+/* login */
 .login-box h5 {
   text-align: center;
   color: var(--blue-btn);
@@ -123,6 +126,15 @@
 .login-box button a span {
   font-size: 18px;
   vertical-align: middle;
+}
+
+.mobile-login {
+  display: none;
+  position: static;
+  transform: none;
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto 0;
 }
 
 /* activity */
@@ -522,4 +534,122 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   color: var(--blue-btn);
   display: block;
   font-weight: 700;
+}
+
+@media screen and (max-width:1024px) {
+  .login-box {
+    left: 5vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .login-box h5 {
+    margin-bottom: 20px;
+  }
+  .activity .duration {
+    font-size: 13px;
+  }
+  .activity-box .white-box {
+    width: 25%;
+  }
+  .activity-box .white-shadow {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width:992px) {
+  .new-content .nc {
+    padding: 18px 15px;
+  }
+  .article-box {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #banner {
+    padding-bottom: 60%;
+  }
+  .login-box {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .login-box h5 {
+    margin-bottom: 30px;
+  }
+  .activity-box .white-box {
+    display: none;
+  }
+  .activity-box .white-shadow {
+    display: none;
+  }
+  .activity .arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .banner .login-box {
+    display: none;
+  }
+  .mobile-login {
+    display: block;
+  }
+  .new .tab-box {
+    display: block;
+    margin: 0 auto;
+    float: unset;
+  }
+  .new .tab-box button {
+    margin-bottom: 23px;
+  }
+  .new-content .nc .date {
+    font-size: 16px;
+  }
+  .new-content .nc .content {
+    width: calc(80% - 30px);
+  }
+  .article-box {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .mobile-login {
+    width: 90%;
+  }
+  .new-content .nc .date {
+    font-size: 14px;
+  }
+  .new-content .nc {
+    padding: 18px 0;
+  }
+  .new .tab-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .new .tab-box button {
+    margin: 0 0 23px;
+    width: 30%;
+    padding: 10px 0;
+  }
+  .login-form {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .login-box button a {
+    padding: 15px 10px;
+  }
+  .login-box button a img.login-icon {
+    margin-right: 10px;
+  }
+  .activity .duration {
+    font-size: 10px;
+  }
+  .new .tab-box button {
+    font-size: 14px;
+  }
 }

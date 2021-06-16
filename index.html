@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>中菲信託</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css" />
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css" />
     <!-- fontawesome -->
-    <link rel="stylesheet" href="./public/css/fontawesome/all.css">
+    <link rel="stylesheet" href="./public/css/fontawesome/all.css" />
     <script src="./public/js/fontawesome/all.js"></script>
     <!-- my CSS -->
     <link rel="stylesheet" href="./public/css/color.css" />
@@ -26,6 +26,71 @@
         <span class="dot dot3">.</span>
       </div>
     </div>
+    <nav class="mobile-menu">
+      <ul class="main-menu py-3">
+        <li class="py-1"><a href="#">關於中菲</a></li>
+        <li class="py-1"><a href="#">客服中心</a></li>
+        <li class="py-1"><a href="#">服務據點</a></li>
+        <li class="py-1"><a href="#">人才招募</a></li>
+      </ul>
+      <ul class="sub-menu py-3">
+        <li><a href="#">信託商品</a></li>
+        <li class="drop-down">
+          <a>信託消息</a>
+          <i class="fas fa-chevron-down drop-arrow"></i>
+          <ul class="py-4">
+            <li class="px-3">
+              <div class="py-3">
+                <h5>商品介紹</h5>
+                <ul>
+                  <li><a href="#">金錢信託</a></li>
+                  <li><a href="#">保險金信託</a></li>
+                  <li><a href="#">有價證券信託</a></li>
+                  <li><a href="#">不動產信託</a></li>
+                  <li><a href="#">租賃權信託</a></li>
+                  <li><a href="#">地上權信託</a></li>
+                  <li><a href="#">保管業務</a></li>
+                  <li><a href="#">證券簽證業務</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="px-3">
+              <div class="py-3">
+                <h5>最新消息</h5>
+                <ul>
+                  <li><a href="#">最新動態</a></li>
+                  <li><a href="#">優惠訊息</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="px-3">
+              <div class="py-3">
+                <h5>線上查詢</h5>
+                <ul>
+                  <li><a href="#">強制信託-生前契約查詢</a></li>
+                  <li><a href="#">強制信託-預售屋價金信託查詢</a></li>
+                  <li><a href="#">不動產買賣價金信託查詢</a></li>
+                  <li><a href="#">禮券信託查詢</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="px-3">
+              <div>
+                <h5>信託小百科</h5>
+                <ul>
+                  <li><a href="#">信託簡介</a></li>
+                  <li><a href="#">申辦流程</a></li>
+                  <li><a href="#">客戶權益</a></li>
+                  <li><a href="#">常見問題</a></li>
+                  <li><a href="#">資料下載</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">信託小百科</a></li>
+      </ul>
+    </nav>
     <header>
       <div class="main-header">
         <div class="container">
@@ -43,6 +108,11 @@
                 </ul>
               </nav>
               <i class="fas fa-search search mx-2"></i>
+              <div id="menu-icon" class="mx-2">
+                <div class="top-bar bar"></div>
+                <div class="middle-bar bar"></div>
+                <div class="bottom-bar bar"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -82,9 +152,15 @@
                   <div>
                     <h5>線上查詢</h5>
                     <ul>
-                      <li><a href="#" class="link">強制信託-生前契約查詢</a></li>
-                      <li><a href="#" class="link">強制信託-預售屋價金信託查詢</a></li>
-                      <li><a href="#" class="link">不動產買賣價金信託查詢</a></li>
+                      <li>
+                        <a href="#" class="link">強制信託-生前契約查詢</a>
+                      </li>
+                      <li>
+                        <a href="#" class="link">強制信託-預售屋價金信託查詢</a>
+                      </li>
+                      <li>
+                        <a href="#" class="link">不動產買賣價金信託查詢</a>
+                      </li>
                       <li><a href="#" class="link">禮券信託查詢</a></li>
                     </ul>
                   </div>
@@ -153,7 +229,7 @@
             <img src="./public/img/icon_arrow_right_blue.svg" alt="" />
           </div>
         </div>
-        <div class="login-box px-4 py-5">
+        <div class="login-box px-4">
           <h5>歡迎使用中菲信託服務</h5>
           <button>
             <a href="./login.html" class="link">
@@ -187,13 +263,46 @@
           </button>
         </div>
       </section>
+      <div class="login-box mobile-login px-4 py-5">
+        <h5>歡迎使用中菲信託服務</h5>
+        <button>
+          <a href="./login.html" class="link">
+            <img
+              class="login-icon"
+              src="./public/img/icon_company_white.svg"
+              alt=""
+            />
+            <span>企業帳號登入</span>
+            <img
+              class="login-arrow"
+              src="./public/img/icon_arrow_right_white.svg"
+              alt=""
+            />
+          </a>
+        </button>
+        <button>
+          <a href="./login.html" class="link">
+            <img
+              class="login-icon"
+              src="./public/img/icon_member_white.svg"
+              alt=""
+            />
+            <span>員工帳號登入</span>
+            <img
+              class="login-arrow"
+              src="./public/img/icon_arrow_right_white.svg"
+              alt=""
+            />
+          </a>
+        </button>
+      </div>
       <div class="activity main-mt">
         <div class="container">
           <h4 class="title">精選活動</h4>
         </div>
         <div class="activity-box">
-            <div class="white-shadow ws-left"></div>
-            <div class="white-box wb-left"></div>
+          <div class="white-shadow ws-left"></div>
+          <div class="white-box wb-left"></div>
           <div class="swiper-container" id="activity">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -290,99 +399,197 @@
           <button class="paper">新聞稿</button>
         </div>
         <div class="new-ad new-content">
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
             <span class="content">里仁刷台灣Pay 滿額享優惠</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月15日</span>
-            <span class="content">e財寶薦者有份 抽iPhone送禮金-被推薦人送禮今已額滿(限110.3.9前開...)</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <span class="content"
+              >e財寶薦者有份
+              抽iPhone送禮金-被推薦人送禮今已額滿(限110.3.9前開...)</span
+            >
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
             <span class="content">里仁刷台灣Pay 滿額享優惠</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月15日</span>
-            <span class="content">e財寶薦者有份 抽iPhone送禮金-被推薦人送禮今已額滿(限110.3.9前開...)</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <span class="content"
+              >e財寶薦者有份
+              抽iPhone送禮金-被推薦人送禮今已額滿(限110.3.9前開...)</span
+            >
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
             <span class="content">里仁刷台灣Pay 滿額享優惠</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
         </div>
         <div class="new-speech new-content">
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
-            <span class="content">e財寶薦者有份 抽iPhone送禮金 2月份幸運得主出驢！</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <span class="content"
+              >e財寶薦者有份 抽iPhone送禮金 2月份幸運得主出驢！</span
+            >
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
             <span class="content">里仁刷台灣Pay 滿額享優惠</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
-            <span class="content">e財寶薦者有份 抽iPhone送禮金 2月份幸運得主出驢！</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <span class="content"
+              >e財寶薦者有份 抽iPhone送禮金 2月份幸運得主出驢！</span
+            >
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
             <span class="content">里仁刷台灣Pay 滿額享優惠</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月17日</span>
-            <span class="content">e財寶薦者有份 抽iPhone送禮金 2月份幸運得主出驢！</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <span class="content"
+              >e財寶薦者有份 抽iPhone送禮金 2月份幸運得主出驢！</span
+            >
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
         </div>
         <div class="new-paper new-content">
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月08日</span>
             <span class="content">台灣Pay買丹提咖啡，20%回饋單你來堤</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月05日</span>
             <span class="content">新宿貸-轉薪戶線上貸款專屬方案</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月08日</span>
             <span class="content">台灣Pay買丹提咖啡，20%回饋單你來堤</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月05日</span>
             <span class="content">新宿貸-轉薪戶線上貸款專屬方案</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
-          <a href="./article.html" target="_blank" class="nc flex-style blank-link">
+          <a
+            href="./article.html"
+            target="_blank"
+            class="nc flex-style blank-link"
+          >
             <span class="date">2021年03月08日</span>
             <span class="content">台灣Pay買丹提咖啡，20%回饋單你來堤</span>
-            <img src="./public/img/icon_arrow_right_orange.svg" alt="">
+            <img src="./public/img/icon_arrow_right_orange.svg" alt="" />
           </a>
         </div>
-        <button class="main-btn blue-bg"><a href="./new.html" class="link">更多最新消息</a></button>
+        <button class="main-btn blue-bg">
+          <a href="./new.html" class="link">更多最新消息</a>
+        </button>
       </div>
       <div class="reccomand main-mt container">
         <h4 class="title">廣告推薦</h4>
         <div class="row">
-          <a href="#" target="_blank" class="col-lg-4" class="blank-link">
-            <div class="pic-box bg" style="background-image: url(./public/img/pic_news_bn_1.png);"></div>
+          <a
+            href="#"
+            target="_blank"
+            class="col-sm-4 col-12 mb-sm-0 mb-3"
+            class="blank-link"
+          >
+            <div
+              class="pic-box bg"
+              style="background-image: url(./public/img/pic_news_bn_1.png)"
+            ></div>
           </a>
-          <a href="#" target="_blank" class="col-lg-4" class="blank-link">
-            <div class="pic-box bg" style="background-image: url(./public/img/pic_news_bn_2.png);"></div>
+          <a
+            href="#"
+            target="_blank"
+            class="col-sm-4 col-12 mb-sm-0 mb-3"
+            class="blank-link"
+          >
+            <div
+              class="pic-box bg"
+              style="background-image: url(./public/img/pic_news_bn_2.png)"
+            ></div>
           </a>
-          <a href="#" target="_blank" class="col-lg-4" class="blank-link">
-            <div class="pic-box bg" style="background-image: url(./public/img/pic_news_bn_1.png);"></div>
+          <a
+            href="#"
+            target="_blank"
+            class="col-sm-4 col-12 mb-sm-0 mb-3"
+            class="blank-link"
+          >
+            <div
+              class="pic-box bg"
+              style="background-image: url(./public/img/pic_news_bn_1.png)"
+            ></div>
           </a>
         </div>
       </div>
@@ -417,19 +624,19 @@
             ©中非信託版權所有 客服中心單一代表號：000-0000(手機請撥02-000-000) /
             0800-000-000(限市話)
           </p>
-          <img src="./public/img/cdic.jpeg" alt="">
+          <img src="./public/img/cdic.jpeg" alt="" />
         </div>
       </div>
     </footer>
     <!-- jQuery -->
     <script src="./public/js/jquery/jquery.min.js"></script>
-     <!-- Bootstrap JS -->
-     <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
-     <script src="./public/js/bootstrap/bootstrap.min.js"></script>
-     <!-- swiper JS -->
-     <script src="./public/js/swiper/swiper-bundle.min.js"></script>
-     <!-- my JS -->
-     <script src="./public/js/swiper.js"></script>
-     <script src="./public/js/index.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.min.js"></script>
+    <!-- swiper JS -->
+    <script src="./public/js/swiper/swiper-bundle.min.js"></script>
+    <!-- my JS -->
+    <script src="./public/js/swiper.js"></script>
+    <script src="./public/js/index.js"></script>
   </body>
 </html>

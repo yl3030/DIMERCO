@@ -731,14 +731,24 @@
 				this.picker.css({
 					top: top + 150,
 					right: right,
-					zIndex: zIndex
+					zIndex: 1000
 				});
+				if($(window).width()<768) {
+					this.picker.css({
+						top: top + 60,
+					});
+				}
 			} else {
 				this.picker.css({
 					top: top + 150,
 					left: left,
-					zIndex: zIndex
+					zIndex: 1000
 				});
+				if($(window).width()<768) {
+					this.picker.css({
+						top: top + 60,
+					});
+				}
 			}
 			return this;
 		},

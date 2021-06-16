@@ -14,6 +14,35 @@ $(".contract-list").children("ul").children("li").children("div").click(function
     }
 })
 
+// mobile-back-menu
+$(".menu-user").click(function(){
+    if($(".back-menu").hasClass("active")){
+        $(".back-menu").removeClass("active");
+    }else {
+        $(".back-menu").addClass("active");
+    }
+})
+
+// mobile-menu
+$("#menu-icon").click(function(){
+    if($(this).hasClass("active")){
+        $(this).removeClass("active");
+        $(".mobile-menu").slideUp(300);
+    }else {
+        $(this).addClass("active");
+        $(".mobile-menu").slideDown(300);
+    }
+})
+$(".mobile-menu .drop-down").click(function(){
+    if($(this).hasClass("active")){
+        $(this).removeClass("active");
+        $(this).children("ul").slideUp(300);
+    }else {
+        $(this).addClass("active");
+        $(this).children("ul").slideDown(300);
+    }
+})
+
 // alert-box
 $(".alert-box").children("div").children("h5").append("注意事項及風險揭露警語");
 $(".alert-box").children("div").children("p").append("基金交易係以長期投資為目的，不宜期待於短期內獲取高利益。任何基金單位之價格，及其收益均可能漲或跌，故不一定能取回投資金額。投資人申購前應自行了解判斷。");

@@ -15,6 +15,7 @@ var Bswiper = new Swiper("#banner", {
 		nextEl: ".Bnext",
 		prevEl: ".Bprev", 
 	},
+	
 });
 $("#banner").mouseenter(function () {
 	Bswiper.autoplay.stop();
@@ -32,4 +33,26 @@ var Aswiper = new Swiper("#activity", {
 		nextEl: ".Anext",
 		prevEl: ".Aprev", 
 	},
+	breakpoints: {
+		0:{
+			slidesPerView: 1.5,
+			spaceBetween: 10,
+		},
+		414:{
+			slidesPerView: 2.5,
+			spaceBetween: 10,
+		},
+		576: {
+			slidesPerView: 3.5,
+			spaceBetween: 10,
+		},
+		768: {
+			slidesPerView: 4,
+			spaceBetween: 10,
+		},
+		1024: {
+			slidesPerView: 5,
+			spaceBetween: 20,
+		}
+	}
 });

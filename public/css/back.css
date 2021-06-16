@@ -1,6 +1,33 @@
 main {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: -145px;
+}
+
+.mobile-back-menu {
+  width: 100%;
+  background-color: var(--gray-btn);
+  height: 45px;
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 50;
+}
+
+.mobile-back-menu .menu-user {
+  width: 40px;
+  height: 100%;
+}
+
+.mobile-back-menu .fa-user {
+  color: var(--blue-btn);
+  font-size: 16px;
+  line-height: 45px;
+  height: 45px;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
 }
 
 .back-menu {
@@ -236,6 +263,8 @@ main {
 .back-table .bm-box .bm .inner > span {
   padding-right: 15px;
   display: block;
+  word-wrap: break-word;
+word-break: break-all;
 }
 
 .back-table.contract-table .bm-box .bm .inner  span.number {
@@ -259,7 +288,7 @@ main {
 }
 
 .back-table.asset-table .bm-box .bm .inner span.ref-name {
-  width: 15%;
+  width: 13%;
 }
 
 .back-table.asset-table .bm-box .bm .inner span.stock-name {
@@ -271,7 +300,7 @@ main {
 }
 
 .back-table.asset-table .bm-box .bm .inner span.number {
-  width: 15%;
+  width: 17%;
 }
 
 .back-table.asset-table .bm-box .bm .inner span.money {
@@ -319,7 +348,7 @@ main {
 }
 
 .alert-box {
-  margin-top: 75px;
+  margin-top: 75px !important;
 }
 
 .alert-box .bm-box {
@@ -406,6 +435,7 @@ main {
   border: 1px solid #f7f7f7;
   box-shadow: 0 1px 10px rgba(0,0,0,0.15);
   display: none;
+  z-index: 10;
 }
 
 .detail-form .classification .sb .select-box {
@@ -469,6 +499,11 @@ main {
 }
 
 /* download */
+.download-box {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
 .download-box .select-box {
   display: inline-block;
   position: relative;
@@ -637,6 +672,201 @@ main {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .detail-form {
+    border-radius: 30px;
+    padding: 15px 20px;
+  }
+  .detail-form .df {
+    margin: 10px 0;
+  }
+  .detail-form .df.df-title {
+    width: 50%;
+  }
+  .detail-form .classification {
+    width: 50%;
+    border: 0;
+  }
+  .detail-form .start-date {
+    width: 33.3333%;
+  }
+  .detail-form .end-date {
+    width: 33.3333%;
+  }
+  .detail-form .btn-box {
+    width: 33.3333%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .back-table .bm-box div.title-col span {
+    font-size: 16px;
+  }
+  .back-table.asset-table .bm-box .bm .inner span.trans-btn button a {
+    padding: 10px 5px;
+  }
+  .detail-form .start-date {
+    width: 50%;
+  }
+  .detail-form .end-date {
+    width: 50%;
+    border: 0;
+  }
+  .detail-form .btn-box {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .pr {
+    padding-bottom: 90%;
+  }
+  .download-box .select-box {
+    width: 60%;
+  }
+  .download-box button {
+    width: 40%;
+    padding: 12px 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-back-menu {
+    display: block;
+  }
+  .back-menu {
+    height: calc(100vh - 105px);
+    overflow: auto;
+    position: fixed;
+    top: 105px;
+    left: -280px;
+    z-index: 10;
+    transition: 0.3s;
+  }
+  .back-menu.active {
+    left: 0;
+  }
+  .back-main > div {
+    margin: 0 auto;
+  }
+  .back-table .bm-box .bm {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .back-main {
+    max-width: 100%;
+    width: 100%;
+    padding-left: var(--bs-gutter-x, 0.75rem);
+  }
+  .download-box {
+    flex-wrap: wrap;
+  }
+  .download-box .select-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .download-box button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px){ 
+  .pr {
+    padding-bottom: 150%;
+  }
+  .vs .xAxis text {
+    font-size: 10px;
+  }
+  .vs .yAxis text {
+    font-size: 10px;
+  }
+  .pn .xAxis text {
+    font-size: 10px;
+  }
+  .pn .yAxis text {
+    font-size: 10px;
+  }
+  .pl .xAxis text {
+    font-size: 10px;
+  }
+  .pl .yAxis text {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .vs .xAxis text {
+    font-size: 10px;
+    transform: rotate(-15deg);
+  }
+  .pn .xAxis text {
+    font-size: 10px;
+    transform: rotate(-15deg);
+  }
+  .pl .xAxis text {
+    font-size: 10px;
+    transform: rotate(-15deg);
+  }
+  .chart-box {
+    padding: 20px 10px;
+  }
+  .vp {
+    padding-bottom: 100%;
+  }
+  .detail-form {
+    padding: 15px 10px;
+  }
+  .detail-form .daterange {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .pr {
+    padding-bottom: 180%;
+  }
+  .pr-data {
+    font-size: 10px;
+  }
+  .pr .yAxis text {
+    font-size: 10px;
+  }
+  .pr .xAxis text {
+    font-size: 10px;
+  }
+  .detail-form .start-date {
+    width: 100%;
+    border: 0;
+  }
+  .detail-form .end-date {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .pr {
+    padding-bottom: 220%;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .back-main {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: var(--bs-gutter-x, 0.75rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .back-main {
+    max-width: calc(50vw + 80px);
+    
+  }
 }
 
 @media screen and (min-width: 992px) {

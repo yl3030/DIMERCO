@@ -9,8 +9,13 @@ let VPdata = [
 var VPsvg = d3.select("#valueProportion");
 var pie = d3.pie();
 
-// 圓餅半徑=外框寬度*0.35
-var vp_radius = $("#valueProportion").width() * 0.35;
+// 圓餅半徑=外框寬度*比例
+var vp_radius;
+if($(window).width()>400){
+  vp_radius = $("#valueProportion").width() * 0.35;
+}else {
+  vp_radius = $("#valueProportion").width() * 0.45;
+}
 var arc = d3.arc().innerRadius(0).outerRadius(vp_radius);
 
 // 圓餅位置置中
@@ -106,8 +111,13 @@ $(window).on("resize", function () {
   VPsvg = d3.select("#valueProportion");
   pie = d3.pie();
 
-  // 圓餅半徑=外框寬度*0.35
+  // 圓餅半徑=外框寬度*數值
+  var vp_radius;
+if($(window).width()>400){
   vp_radius = $("#valueProportion").width() * 0.35;
+}else {
+  vp_radius = $("#valueProportion").width() * 0.45;
+}
   arc = d3.arc().innerRadius(0).outerRadius(vp_radius);
 
   // 圓餅位置置中

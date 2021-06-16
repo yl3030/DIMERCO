@@ -1,5 +1,10 @@
 // 長寬定義
-var pr_margin = { left: 55, right: 20, top: 30, bottom: 80 };
+var pr_margin = { left: 55, right: 20, top: 30, bottom: 45 };
+if($(window).width()<350){
+  pr_margin.left = 45;
+}else {
+  pr_margin.left = 55;
+}
 var p_width = $("#proportionReport").width();
 var p_height = $("#proportionReport").height();
 var pr_width = p_width - pr_margin.left - pr_margin.right;
@@ -210,10 +215,24 @@ PRsvg.selectAll("dot")
   .enter()
   .append("text")
   .attr("dx", (d) => {
-    if (d.x > 20) {
-      return pr_xScale(d.x) - 100;
-    } else {
-      return pr_xScale(d.x) + 10;
+    if($(window).width()>500) {
+      if (d.x > 20) {
+        return pr_xScale(d.x) - 100;
+      } else {
+        return pr_xScale(d.x) + 10;
+      }
+    }else if($(window).width()>350) {
+      if (d.x > 12.5) {
+        return pr_xScale(d.x) - 100;
+      } else {
+        return pr_xScale(d.x) + 10;
+      }
+    }else {
+      if (d.x > 12.5) {
+        return pr_xScale(d.x) - 75;
+      } else {
+        return pr_xScale(d.x) + 10;
+      }
     }
   })
   .attr("dy", (d) => {
@@ -226,16 +245,24 @@ PRsvg.selectAll("dot")
   .attr(
     "transform",
     "translate(" + pr_margin.left + "," + pr_margin.right + ")"
-  );
+  ).attr("class","pr-data");
 PRsvg.selectAll("dot")
   .data(PR_data)
   .enter()
   .append("text")
   .attr("dx", (d) => {
-    if (d.x > 20) {
-      return pr_xScale(d.x) - 20;
-    } else {
-      return pr_xScale(d.x) - 5;
+    if($(window).width()>500) {
+      if (d.x > 20) {
+        return pr_xScale(d.x) - 20;
+      } else {
+        return pr_xScale(d.x) - 5;
+      }
+    }else {
+      if (d.x > 12.5) {
+        return pr_xScale(d.x) - 20;
+      } else {
+        return pr_xScale(d.x) - 5;
+      }
     }
   })
   .attr("dy", (d) => {
@@ -253,6 +280,11 @@ PRsvg.selectAll("dot")
 $(window).on("resize", function () {
   $("#proportionReport").empty();
   // 長寬定義
+  if($(window).width()<350){
+    pr_margin.left = 45;
+  }else {
+    pr_margin.left = 55;
+  }
   p_width = $("#proportionReport").width();
   p_height = $("#proportionReport").height();
   pr_width = p_width - pr_margin.left - pr_margin.right;
@@ -436,10 +468,24 @@ $(window).on("resize", function () {
     .enter()
     .append("text")
     .attr("dx", (d) => {
-      if (d.x > 20) {
-        return pr_xScale(d.x) - 100;
-      } else {
-        return pr_xScale(d.x) + 10;
+      if($(window).width()>500) {
+        if (d.x > 20) {
+          return pr_xScale(d.x) - 100;
+        } else {
+          return pr_xScale(d.x) + 10;
+        }
+      }else if($(window).width()>350) {
+        if (d.x > 12.5) {
+          return pr_xScale(d.x) - 100;
+        } else {
+          return pr_xScale(d.x) + 10;
+        }
+      }else {
+        if (d.x > 12.5) {
+          return pr_xScale(d.x) - 75;
+        } else {
+          return pr_xScale(d.x) + 10;
+        }
       }
     })
     .attr("dy", (d) => {
@@ -452,16 +498,24 @@ $(window).on("resize", function () {
     .attr(
       "transform",
       "translate(" + pr_margin.left + "," + pr_margin.right + ")"
-    );
+    ).attr("class","pr-data");;
   PRsvg.selectAll("dot")
     .data(PR_data)
     .enter()
     .append("text")
     .attr("dx", (d) => {
-      if (d.x > 20) {
-        return pr_xScale(d.x) - 20;
-      } else {
-        return pr_xScale(d.x) - 5;
+      if($(window).width()>500) {
+        if (d.x > 20) {
+          return pr_xScale(d.x) - 20;
+        } else {
+          return pr_xScale(d.x) - 5;
+        }
+      }else {
+        if (d.x > 12.5) {
+          return pr_xScale(d.x) - 20;
+        } else {
+          return pr_xScale(d.x) - 5;
+        }
       }
     })
     .attr("dy", (d) => {
