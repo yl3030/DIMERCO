@@ -544,17 +544,37 @@ word-break: break-all;
 /* apply */
 .apply-box .pdf-box {
   width: 100%;
+  height: calc(100vh - 200px);
   padding: 30px 15px 20px;
   background-color: var(--gray-btn);
   border-radius: 30px;
   margin-bottom: 30px;
 }
 
+.apply-box .pdf-box #sidebarToggle {
+  display: none;
+}
+
+.apply-box .pdf-box .toolbarButtonSpacer {
+  display: none;
+}
+
+.apply-box .pdf-box #toolbarViewerRight {
+  display: none;
+}
+
+.apply-box .pdf-box #toolbarViewerMiddle {
+  left: inherit;
+  transform: none;
+  right: 0;
+}
+
 .apply-box .agree-box {
   margin: 0 auto 50px;
   line-height: 1;
   text-align: center;
-  cursor: pointer;
+  cursor: auto;
+  position: relative;
 }
 
 .apply-box .agree-box .check-box {
@@ -729,6 +749,12 @@ word-break: break-all;
   .download-box button {
     width: 40%;
     padding: 12px 15px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .apply-box .pdf-box #toolbarViewerMiddle {
+    position: absolute;
   }
 }
 
