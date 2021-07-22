@@ -27,13 +27,22 @@ $(".contract-list")
   });
 
 // mobile-back-menu
-$(".menu-user").click(function () {
-  if ($(".back-menu").hasClass("active")) {
-    $(".back-menu").removeClass("active");
-  } else {
-    $(".back-menu").addClass("active");
-  }
-});
+// $(".menu-user").click(function () {
+//   if ($(".outer-menu").hasClass("active")) {
+//     $(".outer-menu").removeClass("active");
+//   } else {
+//     $(".outer-menu").addClass("active");
+//   }
+// });
+// $(".mobile-back-menu .item").click(function(){
+//   $(".item-list").slideToggle(100);
+// })
+$("#menu-back-icon").click(function(){
+  $(".outer-menu").addClass("active");
+})
+$("#cross").click(function(){
+  $(".outer-menu").removeClass("active");
+})
 
 // mobile-menu
 $("#menu-icon").click(function () {
@@ -54,6 +63,8 @@ $(".mobile-menu .drop-down").click(function () {
     $(this).children("ul").slideDown(300);
   }
 });
+
+
 
 // alert-box
 $(".alert-box").children("div").children("h5").append("注意事項及風險揭露警語");

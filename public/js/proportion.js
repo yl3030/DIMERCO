@@ -239,7 +239,11 @@ PRsvg.selectAll("dot")
     return pr_yScale(d.y) + 8;
   })
   .text(function (d) {
-    return " (" + d.x + "%, " + d.y + "%)";
+    if($(window).width()<576) {
+      return "";
+    }else {
+      return " (" + d.x + "%, " + d.y + "%)";
+    }
   })
   .attr("font-size", "13px")
   .attr(
@@ -492,7 +496,11 @@ $(window).on("resize", function () {
       return pr_yScale(d.y) + 8;
     })
     .text(function (d) {
-      return " (" + d.x + "%, " + d.y + "%)";
+      if($(window).width()<576) {
+        return "";
+      }else {
+        return " (" + d.x + "%, " + d.y + "%)";
+      }
     })
     .attr("font-size", "13px")
     .attr(
