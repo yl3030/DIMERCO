@@ -761,7 +761,9 @@ footer .copy-right p.copyright-mobile {
   .login-form {
     width: 80%;
   }
-
+  .new-banner {
+    padding-bottom: 55%;
+  }
   .new .tab-box {
     display: block;
     margin: 0 auto;
