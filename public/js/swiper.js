@@ -34,23 +34,24 @@ var Aswiper = new Swiper("#activity", {
 		prevEl: ".Aprev", 
 	},
 	breakpoints: {
-		0:{
-			slidesPerView: 1.5,
-			spaceBetween: 10,
-		},
-		414:{
-			slidesPerView: 2.5,
-			spaceBetween: 10,
-		},
+		// 0:{
+		// 	slidesPerView: 1.5,
+		// 	spaceBetween: 10,
+		// },
+		// 414:{
+		// 	slidesPerView: 2.5,
+		// 	spaceBetween: 10,
+		// },
 		576: {
 			slidesPerView: 3.5,
 			spaceBetween: 10,
 		},
 		768: {
-			slidesPerView: 4,
+			slidesPerView: 3.5,
 			spaceBetween: 10,
+			centeredSlides: true,
 		},
-		1024: {
+		1020: {
 			slidesPerView: 5,
 			spaceBetween: 20,
 		}

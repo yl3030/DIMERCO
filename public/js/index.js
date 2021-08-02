@@ -1,16 +1,12 @@
 // second-menu
 var SecondMenuNum = $(".second-menu").children("li").length;
 var SecondMenuWidth = 100 / SecondMenuNum;
-$(".second-menu")
+$(".sub-header .second-menu")
   .children("li")
   .css("width", SecondMenuWidth + "%");
 
 // back-menu
-$(".contract-list")
-  .children("ul")
-  .children("li")
-  .children("div")
-  .click(function () {
+$(".dl_1").click(function () {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active");
       $(this)
@@ -25,6 +21,17 @@ $(".contract-list")
         .slideDown(300);
     }
   });
+$(".dl_2").click(function(){
+  if($(this).hasClass("active")){
+    $(this).removeClass("active");
+    $(this).parents("li").removeClass("active");
+    $(this).parents("li").children(".dropdown-link").slideUp(300);
+  }else {
+    $(this).addClass("active");
+    $(this).parents("li").addClass("active");
+    $(this).parents("li").children(".dropdown-link").slideDown(300);
+  }
+})
 
 // mobile-back-menu
 // $(".menu-user").click(function () {
@@ -37,12 +44,19 @@ $(".contract-list")
 // $(".mobile-back-menu .item").click(function(){
 //   $(".item-list").slideToggle(100);
 // })
-$("#menu-back-icon").click(function(){
-  $(".outer-menu").addClass("active");
-})
-$("#cross").click(function(){
+$("#menu-back-icon").click(function () {
+  if ($(this).hasClass("active")) {
+    $(this).removeClass("active");
+    $(".outer-menu").removeClass("active");
+  } else {
+    $(this).addClass("active");
+    $(".outer-menu").addClass("active");
+  }
+});
+$("#cross").click(function () {
+  $(this).removeClass("active");
   $(".outer-menu").removeClass("active");
-})
+});
 
 // mobile-menu
 $("#menu-icon").click(function () {
@@ -64,8 +78,6 @@ $(".mobile-menu .drop-down").click(function () {
   }
 });
 
-
-
 // alert-box
 $(".alert-box").children("div").children("h5").append("注意事項及風險揭露警語");
 $(".alert-box")
@@ -83,14 +95,17 @@ $("#viewerContainer").on("scroll", function () {
   scrollint = $("#viewerContainer").scrollTop();
   var viewerHeight = $("#viewer").height();
   if (scrollint + containerHeight > viewerHeight) {
-    $(".agree-box").addClass("ableToClick").css("cursor","pointer");
+    $(".agree-box").addClass("ableToClick").css("cursor", "pointer");
   }
 });
 $(".agree-box").click(function () {
-  if (!$(this).children(".check-box").hasClass("active") && $(this).hasClass("ableToClick")) {
+  if (
+    !$(this).children(".check-box").hasClass("active") &&
+    $(this).hasClass("ableToClick")
+  ) {
     $(this).children(".check-box").addClass("active");
     $(".agree-btn").attr("disabled", false);
-  } else if($(this).children(".check-box").hasClass("active")) {
+  } else if ($(this).children(".check-box").hasClass("active")) {
     $(this).children(".check-box").removeClass("active");
     $(".agree-btn").attr("disabled", true);
   }

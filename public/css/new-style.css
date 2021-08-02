@@ -1,3 +1,6 @@
+nav.sub-header {
+  display: none;
+}
 main {
   margin-top: 65px;
   height: calc(100vh - 65px);
@@ -53,11 +56,15 @@ footer .copy-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 50%;
+  margin-left: auto;
 }
 
 footer .copy-right p {
   width: calc(90% - 60px);
   margin-right: 10px;
+  font-size: 14px;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
