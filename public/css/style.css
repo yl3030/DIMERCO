@@ -187,8 +187,6 @@ nav.sub-header > div > ul > li > a {
   font-weight: 700;
   cursor: pointer;
   position: relative;
-  /* display: block; */
-  /* height: 100%; */
 }
 
 nav.sub-header > div > ul > li.drop-down:after {
@@ -328,6 +326,268 @@ nav.sub-header > div > ul > li.drop-down:after {
   margin-top: 0;
 }
 
+/* new mobile menu */
+.outer-menu {
+  width: 280px;
+  height: calc(100vh - 110px);
+  /* max-height: calc(100vh - 110px); */
+  /* height: 100%; */
+  overflow: auto;
+  background-color: #283a57;
+  position: relative;
+  z-index: 10000000;
+}
+
+.pad-mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: none;
+}
+
+.outer-menu::-webkit-scrollbar-track-piece {
+  opacity: 0;
+}
+
+.outer-menu .account-box {
+  padding: 40px 10px;
+}
+
+.outer-menu .account-box h5 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.outer-menu .account-box p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.outer-menu .account-box .btn-box {
+  text-align: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #445268;
+}
+
+.outer-menu .account-box .btn-box button {
+  border-radius: 100px;
+  background-color: #cacfd6;
+  margin: 0 7px;
+}
+
+.outer-menu .account-box .btn-box button a {
+  display: block;
+  color: #283a57;
+  padding: 5px 10px;
+}
+
+.outer-menu .bn-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.outer-menu nav {
+  padding-bottom: 60px;
+}
+
+.outer-menu .back-main-menu {
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 13px;
+  background-color: #2d4161;
+  overflow-anchor: none;
+}
+
+.outer-menu .dl_0.active {
+  border-left: 7px solid var(--orange-btn);
+}
+
+.outer-menu .dl_0.active span {
+  color: var(--orange-btn);
+}
+
+.outer-menu .dl_0.active img.arrow-normal {
+  display: none;
+}
+
+.outer-menu .dl_0.active img.arrow-active {
+  display: inline-block;
+}
+
+.outer-menu .back-main-menu .dropdown-list {
+  width: 100%;
+  padding: 15px 30px 15px 20px;
+  color: #fff;
+}
+
+.outer-menu .back-main-menu .dropdown-list a {
+  color: #fff;
+}
+
+.outer-menu .back-main-menu .dropdown-link {
+  display: none;
+}
+
+.outer-menu .back-main-menu .dropdown-link li.active {
+  background-color: #3e4e68;
+}
+
+.outer-menu .back-main-menu .dropdown-link li.active a {
+  color: var(--orange-btn);
+  font-weight: 700;
+}
+
+.outer-menu .back-main-menu .dropdown-link .dropdown-list {
+  padding-left: 33px;
+  margin-left: -3px;
+  margin-right: -6px;
+}
+
+.outer-menu .back-main-menu span {
+  color: #fff;
+}
+
+.outer-menu .back-main-menu img {
+  width: 8px;
+  transition: 0.3s;
+}
+
+.outer-menu img.arrow-active {
+  display: none;
+}
+
+.outer-menu .back-main-menu .dl_1 {
+  width: 100%;
+  padding: 15px 30px 15px 20px;
+  transition: 0.3s;
+}
+
+.outer-menu .back-main-menu .dl_1.active {
+  background-color: #3e4e68;
+}
+
+.outer-menu .back-main-menu .dl_1.active img {
+  transform: rotate(90deg);
+}
+
+.outer-menu .back-main-menu .dl_2 {
+  transition: 0.3s;
+}
+
+.outer-menu .back-main-menu .dl_2 img {
+  transition: 0.3s;
+}
+
+.outer-menu .back-main-menu .dl_2.active img {
+  transform: rotate(90deg);
+}
+
+.outer-menu .relative-link {
+  display: none;
+}
+
+.outer-menu .back-drop-down {
+  display: none;
+}
+
+.outer-menu .back-drop-down li {
+  padding-left: 10px;
+}
+
+.outer-menu .back-drop-down>li.active {
+  border-left: 7px solid var(--orange-btn);
+  padding-left: 3px;
+}
+
+.outer-menu .back-drop-down>li.active span {
+  color: var(--orange-btn);
+}
+
+.outer-menu .back-drop-down>li.active img.arrow-normal {
+  display: none;
+}
+
+.outer-menu .back-drop-down>li.active img.arrow-active {
+  display: inline-block;
+}
+
+.outer-menu {
+  position: relative;
+}
+
+.outer-menu .mobile-account {
+  /* display: block; */
+    background-color: #D4D8DD;
+    height: 65px;
+    text-align: center;
+    position: fixed;
+  /* display: none; */
+  bottom: 0;
+  width: 280px;
+  left: -280px;
+  transition: 0.3s;
+}
+
+.outer-menu #cross {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: none;
+}
+
+.outer-menu .cross-box {
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+
+.outer-menu .cross-box .bar {
+  width: 90%;
+  height: 1px;
+  background-color: #fff;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.outer-menu .cross-box .bar.bar1 {
+  transform: translate(-50%,-50%)rotate(45deg);
+}
+
+.outer-menu .cross-box .bar.bar2 {
+  transform: translate(-50%,-50%)rotate(-45deg);
+}
+
+.outer-menu::-webkit-scrollbar-track {
+  background-color: #283a57;
+  width: 10px;
+}
+
+.outer-menu::-webkit-scrollbar {
+  background-color: #283a57;
+  width: 8px;
+}
+
+.outer-menu::-webkit-scrollbar-thumb {
+  background-color: #cacfd6;
+  width: 8px;
+  border-radius: 100px;
+}
+
 /* footer */
 footer {
   background-color: #d4d8dd;
@@ -345,7 +605,7 @@ footer .copy-right img {
 
 /* main */
 main {
-  margin-top: 110px;
+  padding-top: 110px;
   padding-bottom: 145px;
 }
 
@@ -674,12 +934,6 @@ button.yellow-bg {
 }
 
 /* RWD-pad */
-/* @media screen and (min-width: 576px) {
-  .modal-dialog {
-    max-width: 500px;
-  }
-} */
-
 @media screen and (min-width: 576px) {
   .modal-dialog {
     max-width: 600px;
@@ -689,10 +943,36 @@ button.yellow-bg {
   }
 }
 
-/* RWD-Pad */
 @media screen and (max-width: 1019px) {
   main {
+    padding-top: 60px;
+  }
+  .outer-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    height: calc(100vh - 60px);
+    /* width: 100%; */
+    transition: 0.3s;
+    /* z-index: 30005; */
+  }
+  .outer-menu.active {
+    left: 0;
+  }
+  /* .outer-menu.active .mobile-account {
+    left: 0;
+  } */
+  .outer-menu #cross {
+    display: block;
+  }
+  .outer-menu .mobile-account {
+    /* width: 280px; */
+  }
+  main {
     padding-bottom: 20px;
+  }
+  .main-mt {
+    margin-top: 40px;
   }
   .container {
     max-width: 1000px;
@@ -715,6 +995,7 @@ button.yellow-bg {
   }
   .menu-icon {
     display: inline-block;
+    margin-left: 0 !important;
   }
   nav.sub-header {
     display: none;
@@ -728,6 +1009,9 @@ button.yellow-bg {
   nav.sub-header > div > ul > li:first-child {
     border-left: 0;
   }
+  .breadcrumb {
+    margin-top: 0;
+  }
 }
 @media screen and (max-width: 850px) {
   .main-popup.cash .modal-dialog {
@@ -737,6 +1021,26 @@ button.yellow-bg {
 
 /* RWD-phone */
 @media screen and (max-width: 767px) {
+  .outer-menu {
+    width: 100%;
+  }
+  .outer-menu .mobile-account {
+    width: 100%;
+    left: -100%;
+  }
+  .outer-menu.active .mobile-account {
+    left: 0;
+  }
+  .outer-menu .mobile-account a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--blue-btn);
+    font-weight: 700;
+    line-height: 65px;
+  }
+  .outer-menu .mobile-account span {
+    line-height: 65px;
+  }
   .main-mt {
     margin-top: 55px;
   }
@@ -745,8 +1049,6 @@ button.yellow-bg {
   }
   .main-popup.clearEntrust .modal-footer {
     padding: 30px 20px;
-    /* justify-content: space-between; */
-    /* display: block; */
   }
   .main-popup.clearEntrust .modal-footer button {
     width: 70%;
@@ -759,15 +1061,12 @@ button.yellow-bg {
   .main-popup.clearEntrust .modal-footer button.cancel {
     order: 1;
   }
-  .main-popup.cash .modal-body .content {
-    /* width: 90%; */
-  }
   .breadcrumb {
     margin: 18px 0 13px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
   }
   .breadcrumb li {
     display: inline-block;
@@ -779,6 +1078,9 @@ button.yellow-bg {
   .main-popup.cash .modal-body .content > div {
     width: calc(50% - 20px);
     margin-bottom: 20px;
+  }
+  .main-btn {
+    margin-bottom: 50px;
   }
 }
 
@@ -801,12 +1103,5 @@ button.yellow-bg {
   .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
     padding-right: 3px;
   }
-}
-
-@media screen and (max-width: 400px) {
-  /* .main-popup.cash .modal-body .content > div {
-    width: 100%;
-    margin-bottom: 20px;
-  } */
 }
 

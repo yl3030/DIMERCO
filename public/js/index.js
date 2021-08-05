@@ -44,39 +44,47 @@ $(".dl_2").click(function(){
 // $(".mobile-back-menu .item").click(function(){
 //   $(".item-list").slideToggle(100);
 // })
-$("#menu-back-icon").click(function () {
-  if ($(this).hasClass("active")) {
-    $(this).removeClass("active");
-    $(".outer-menu").removeClass("active");
-  } else {
-    $(this).addClass("active");
-    $(".outer-menu").addClass("active");
-  }
-});
-$("#cross").click(function () {
-  $(this).removeClass("active");
-  $(".outer-menu").removeClass("active");
-});
-
-// mobile-menu
 $("#menu-icon").click(function () {
   if ($(this).hasClass("active")) {
     $(this).removeClass("active");
-    $(".mobile-menu").slideUp(300);
+    $(".outer-menu").removeClass("active");
+    if($(window).width()>=768&&$(window).width()<1020){
+      $(".pad-mask").fadeOut(300);
+    }
   } else {
     $(this).addClass("active");
-    $(".mobile-menu").slideDown(300);
+    $(".outer-menu").addClass("active");
+    if($(window).width()>=768&&$(window).width()<1020){
+      $(".pad-mask").fadeIn(300);
+    }
+    
   }
 });
-$(".mobile-menu .drop-down").click(function () {
-  if ($(this).hasClass("active")) {
-    $(this).removeClass("active");
-    $(this).children("ul").slideUp(300);
-  } else {
-    $(this).addClass("active");
-    $(this).children("ul").slideDown(300);
-  }
+$(".pad-mask").click(function () {
+  $("#menu-icon").removeClass("active");
+  $(".outer-menu").removeClass("active");
+  $(this).fadeOut(300);
 });
+
+// mobile-menu
+// $("#menu-icon").click(function () {
+//   if ($(this).hasClass("active")) {
+//     $(this).removeClass("active");
+//     $(".mobile-menu").slideUp(300);
+//   } else {
+//     $(this).addClass("active");
+//     $(".mobile-menu").slideDown(300);
+//   }
+// });
+// $(".mobile-menu .drop-down").click(function () {
+//   if ($(this).hasClass("active")) {
+//     $(this).removeClass("active");
+//     $(this).children("ul").slideUp(300);
+//   } else {
+//     $(this).addClass("active");
+//     $(this).children("ul").slideDown(300);
+//   }
+// });
 
 // alert-box
 $(".alert-box").children("div").children("h5").append("注意事項及風險揭露警語");

@@ -1,8 +1,8 @@
 // 長寬定義
 var pr_margin = { left: 55, right: 20, top: 30, bottom: 45 };
-if($(window).width()<350){
+if ($(window).width() < 350) {
   pr_margin.left = 45;
-}else {
+} else {
   pr_margin.left = 55;
 }
 var p_width = $("#proportionReport").width();
@@ -83,8 +83,6 @@ PRsvg.append("text")
   .style("color", "#4E4E4E")
   .text("投資報酬率");
 
-
-  
 var tick_x_num = 5;
 var tick_y_num = 5;
 // Add the X Axis
@@ -137,6 +135,14 @@ PRsvg.append("rect")
 PRsvg.append("rect")
   .attr("width", pr_width / 2)
   .attr("height", pr_height / 2)
+  .attr("fill", "transparent")
+  .attr(
+    "transform",
+    "translate(" + (pr_margin.left + pr_width / 2) + "," + pr_margin.top + ")"
+  );
+PRsvg.append("rect")
+  .attr("width", pr_width / 2)
+  .attr("height", pr_height / 2)
   .attr("fill", "#FEFAF5")
   .attr(
     "transform",
@@ -145,6 +151,14 @@ PRsvg.append("rect")
       "," +
       (pr_margin.top + pr_height / 2) +
       ")"
+  );
+PRsvg.append("rect")
+  .attr("width", pr_width / 2)
+  .attr("height", pr_height / 2)
+  .attr("fill", "transparent")
+  .attr(
+    "transform",
+    "translate(" + pr_margin.left + "," + (pr_margin.top + pr_height / 2) + ")"
   );
 
 // 網格
@@ -207,7 +221,10 @@ PRsvg.selectAll("dot")
     "transform",
     "translate(" + pr_margin.left + "," + pr_margin.right + ")"
   )
-  .style("fill", "#F39A34");
+  .style("fill", "#F39A34")
+  .attr("class", (d, i) => {
+    return "data pr-dot dot" + i;
+  });
 
 // 顯示資料
 PRsvg.selectAll("dot")
@@ -215,19 +232,19 @@ PRsvg.selectAll("dot")
   .enter()
   .append("text")
   .attr("dx", (d) => {
-    if($(window).width()>500) {
+    if ($(window).width() > 500) {
       if (d.x > 20) {
         return pr_xScale(d.x) - 100;
       } else {
         return pr_xScale(d.x) + 10;
       }
-    }else if($(window).width()>350) {
+    } else if ($(window).width() > 350) {
       if (d.x > 12.5) {
         return pr_xScale(d.x) - 100;
       } else {
         return pr_xScale(d.x) + 10;
       }
-    }else {
+    } else {
       if (d.x > 12.5) {
         return pr_xScale(d.x) - 75;
       } else {
@@ -239,9 +256,9 @@ PRsvg.selectAll("dot")
     return pr_yScale(d.y) + 8;
   })
   .text(function (d) {
-    if($(window).width()<576) {
+    if ($(window).width() < 576) {
       return "";
-    }else {
+    } else {
       return " (" + d.x + "%, " + d.y + "%)";
     }
   })
@@ -249,19 +266,20 @@ PRsvg.selectAll("dot")
   .attr(
     "transform",
     "translate(" + pr_margin.left + "," + pr_margin.right + ")"
-  ).attr("class","pr-data");
+  )
+  .attr("class", "pr-data");
 PRsvg.selectAll("dot")
   .data(PR_data)
   .enter()
   .append("text")
   .attr("dx", (d) => {
-    if($(window).width()>500) {
+    if ($(window).width() > 500) {
       if (d.x > 20) {
         return pr_xScale(d.x) - 20;
       } else {
         return pr_xScale(d.x) - 5;
       }
-    }else {
+    } else {
       if (d.x > 12.5) {
         return pr_xScale(d.x) - 20;
       } else {
@@ -279,14 +297,93 @@ PRsvg.selectAll("dot")
   .attr(
     "transform",
     "translate(" + pr_margin.left + "," + pr_margin.right + ")"
-  );
+  )
+  .attr("class", (d, i) => {
+    return "data pr-name name" + i;
+  });
+
+
+
+// popup
+
+$(".pr-name").click(function () {
+  if ($(window).width() < 576) {
+  var nameIndex = $("#proportionReport .pr-name").index(this);
+  var propName = PR_data[nameIndex].name;
+  $(".PR-popup").children("h5").empty().append(propName);
+  $(".PR-popup")
+    .children("p")
+    .empty()
+    .append("(" + PR_data[nameIndex].x + "% , " + PR_data[nameIndex].y + "%)");
+  if (
+    $(this).hasClass("active") ||
+    $(".pr-dot.dot" + nameIndex).hasClass("active")
+  ) {
+    console.log("已經選過了");
+    $(this).removeClass("active");
+    $(".pr-dot.dot" + nameIndex).removeClass("active");
+    $(".PR-popup").hide();
+  } else {
+    console.log("大家都沒被選過");
+    $(".pr-name").removeClass("active");
+    $(".pr-dot").removeClass("active");
+    $(this).addClass("active");
+    $(".pr-dot.dot" + nameIndex).addClass("active");
+    $(".PR-popup").show();
+  }
+}
+});
+
+$(".pr-dot").click(function () {
+  console.log("螢幕寬=" + $(window).width());
+  if ($(window).width() < 576) {
+    var nameIndex = $("#proportionReport .pr-dot").index(this);
+    var propName = PR_data[nameIndex].name;
+    $(".PR-popup").children("h5").empty().append(propName);
+    $(".PR-popup")
+      .children("p")
+      .empty()
+      .append(
+        "(" + PR_data[nameIndex].x + "% , " + PR_data[nameIndex].y + "%)"
+      );
+    if (
+      $(this).hasClass("active") ||
+      $(".pr-name.name" + nameIndex).hasClass("active")
+    ) {
+      console.log("已經選過了");
+      console.log("!!!");
+      $(this).removeClass("active");
+      $(".pr-name.name" + nameIndex).removeClass("active");
+      $(".PR-popup").hide();
+    } else {
+      console.log("大家都沒被選過");
+      console.log("!!!");
+      $(".pr-name").removeClass("active");
+      $(".pr-dot").removeClass("active");
+      $(this).addClass("active");
+      $(".pr-name.name" + nameIndex).addClass("active");
+      $(".PR-popup").show();
+    }
+  }
+});
+
+$("#proportionReport *")
+  .not(".data")
+  .click(function () {
+    console.log("沒有pr-name也沒有pr-dot的地方～");
+    if ($(window).width() < 576) {
+      $(".pr-name").removeClass("active");
+      $(".pr-dot").removeClass("active");
+      $(".PR-popup").hide();
+    }
+  });
 
 $(window).on("resize", function () {
   $("#proportionReport").empty();
   // 長寬定義
-  if($(window).width()<350){
+  if ($(window).width() < 350) {
     pr_margin.left = 45;
-  }else {
+  } else {
     pr_margin.left = 55;
   }
   p_width = $("#proportionReport").width();
@@ -301,8 +398,8 @@ $(window).on("resize", function () {
     .attr("height", p_height);
 
   // x、y軸定義
-  pr_xScale = d3.scaleLinear().domain([0, 25]).range([0, pr_width]),
-    pr_yScale = d3.scaleLinear().domain([0, 10]).range([pr_height, 0]);
+  (pr_xScale = d3.scaleLinear().domain([0, 25]).range([0, pr_width])),
+    (pr_yScale = d3.scaleLinear().domain([0, 10]).range([pr_height, 0]));
 
   // 圖表位置
   PRg = PRsvg.append("g").attr(
@@ -384,11 +481,31 @@ $(window).on("resize", function () {
   PRsvg.append("rect")
     .attr("width", pr_width / 2)
     .attr("height", pr_height / 2)
+    .attr("fill", "transparent")
+    .attr(
+      "transform",
+      "translate(" + (pr_margin.left + pr_width / 2) + "," + pr_margin.top + ")"
+    );
+  PRsvg.append("rect")
+    .attr("width", pr_width / 2)
+    .attr("height", pr_height / 2)
     .attr("fill", "#FEFAF5")
     .attr(
       "transform",
       "translate(" +
         (pr_margin.left + pr_width / 2) +
+        "," +
+        (pr_margin.top + pr_height / 2) +
+        ")"
+    );
+  PRsvg.append("rect")
+    .attr("width", pr_width / 2)
+    .attr("height", pr_height / 2)
+    .attr("fill", "transparent")
+    .attr(
+      "transform",
+      "translate(" +
+        pr_margin.left +
         "," +
         (pr_margin.top + pr_height / 2) +
         ")"
@@ -464,7 +581,10 @@ $(window).on("resize", function () {
       "transform",
       "translate(" + pr_margin.left + "," + pr_margin.right + ")"
     )
-    .style("fill", "#F39A34");
+    .style("fill", "#F39A34")
+    .attr("class", (d, i) => {
+      return "data pr-dot dot" + i;
+    });
 
   // 顯示資料
   PRsvg.selectAll("dot")
@@ -472,19 +592,19 @@ $(window).on("resize", function () {
     .enter()
     .append("text")
     .attr("dx", (d) => {
-      if($(window).width()>500) {
+      if ($(window).width() > 500) {
         if (d.x > 20) {
           return pr_xScale(d.x) - 100;
         } else {
           return pr_xScale(d.x) + 10;
         }
-      }else if($(window).width()>350) {
+      } else if ($(window).width() > 350) {
         if (d.x > 12.5) {
           return pr_xScale(d.x) - 100;
         } else {
           return pr_xScale(d.x) + 10;
         }
-      }else {
+      } else {
         if (d.x > 12.5) {
           return pr_xScale(d.x) - 75;
         } else {
@@ -496,9 +616,9 @@ $(window).on("resize", function () {
       return pr_yScale(d.y) + 8;
     })
     .text(function (d) {
-      if($(window).width()<576) {
+      if ($(window).width() < 576) {
         return "";
-      }else {
+      } else {
         return " (" + d.x + "%, " + d.y + "%)";
       }
     })
@@ -506,19 +626,20 @@ $(window).on("resize", function () {
     .attr(
       "transform",
       "translate(" + pr_margin.left + "," + pr_margin.right + ")"
-    ).attr("class","pr-data");;
+    )
+    .attr("class", "pr-data");
   PRsvg.selectAll("dot")
     .data(PR_data)
     .enter()
     .append("text")
     .attr("dx", (d) => {
-      if($(window).width()>500) {
+      if ($(window).width() > 500) {
         if (d.x > 20) {
           return pr_xScale(d.x) - 20;
         } else {
           return pr_xScale(d.x) - 5;
         }
-      }else {
+      } else {
         if (d.x > 12.5) {
           return pr_xScale(d.x) - 20;
         } else {
@@ -536,5 +657,80 @@ $(window).on("resize", function () {
     .attr(
       "transform",
       "translate(" + pr_margin.left + "," + pr_margin.right + ")"
-    );
+    )
+    .attr("class", (d, i) => {
+      return "data pr-name name" + i;
+    });
+
+
+  // popup
+
+  $(".pr-name").click(function () {
+    if ($(window).width() < 576) {
+    var nameIndex = $("#proportionReport .pr-name").index(this);
+    var propName = PR_data[nameIndex].name;
+    $(".PR-popup").children("h5").empty().append(propName);
+    $(".PR-popup")
+      .children("p")
+      .empty()
+      .append("(" + PR_data[nameIndex].x + "% , " + PR_data[nameIndex].y + "%)");
+    if (
+      $(this).hasClass("active") ||
+      $(".pr-dot.dot" + nameIndex).hasClass("active")
+    ) {
+      // console.log("已經選過了");
+      $(this).removeClass("active");
+      $(".pr-dot.dot" + nameIndex).removeClass("active");
+      $(".PR-popup").hide();
+    } else {
+      // console.log("大家都沒被選過");
+      $(".pr-name").removeClass("active");
+      $(".pr-dot").removeClass("active");
+      $(this).addClass("active");
+      $(".pr-dot.dot" + nameIndex).addClass("active");
+      $(".PR-popup").show();
+    }
+  }
+  });
+
+  $(".pr-dot").click(function () {
+    if ($(window).width() < 576) {
+      var nameIndex = $("#proportionReport .pr-dot").index(this);
+      var propName = PR_data[nameIndex].name;
+      $(".PR-popup").children("h5").empty().append(propName);
+      $(".PR-popup")
+        .children("p")
+        .empty()
+        .append(
+          "(" + PR_data[nameIndex].x + "% , " + PR_data[nameIndex].y + "%)"
+        );
+      if (
+        $(this).hasClass("active") ||
+        $(".pr-name.name" + nameIndex).hasClass("active")
+      ) {
+        // console.log("已經選過了");
+        $(this).removeClass("active");
+        $(".pr-name.name" + nameIndex).removeClass("active");
+        $(".PR-popup").hide();
+      } else {
+        // console.log("大家都沒被選過");
+        $(".pr-name").removeClass("active");
+        $(".pr-dot").removeClass("active");
+        $(this).addClass("active");
+        $(".pr-name.name" + nameIndex).addClass("active");
+        $(".PR-popup").show();
+      }
+    }
+  });
+
+  $("#proportionReport *")
+    .not(".data")
+    .click(function () {
+      if ($(window).width() < 576) {
+        // console.log("沒有pr-name也沒有pr-dot的地方～");
+        $(".pr-name").removeClass("active");
+        $(".pr-dot").removeClass("active");
+        $(".PR-popup").hide();
+      }
+    });
 });

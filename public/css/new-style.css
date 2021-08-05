@@ -10,21 +10,7 @@ main {
   height: calc(100vh - 65px);
 }
 
-.back-menu::-webkit-scrollbar-track {
-    background-color: #283a57;
-    width: 10px;
-}
 
-.back-menu::-webkit-scrollbar {
-    background-color: #283a57;
-    width: 8px;
-}
-
-.back-menu::-webkit-scrollbar-thumb {
-    background-color: #cacfd6;
-    width: 8px;
-    border-radius: 100px;
-}
 
 .back-main {
   height: calc(100vh - 65px);
