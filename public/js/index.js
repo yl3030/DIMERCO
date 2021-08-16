@@ -146,3 +146,4 @@ $(".sb")
 // link
 $("a.no-link").attr("href", "javascript:void(0)");
 $("a.blank-link").attr("target", "_blank");
+

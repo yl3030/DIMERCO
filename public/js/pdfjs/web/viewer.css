@@ -1595,7 +1595,7 @@ html[dir="rtl"] .toolbarButton#secondaryToolbarToggle::before {
 .toolbarButton.pageUp::before {
   -webkit-mask-image: var(--toolbarButton-pageUp-icon);
   mask-image: var(--toolbarButton-pageUp-icon);
-}
+} 
 
 .toolbarButton.pageDown::before {
   -webkit-mask-image: var(--toolbarButton-pageDown-icon);

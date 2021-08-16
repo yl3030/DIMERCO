@@ -49,7 +49,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER + OptionKind.PREFERENCE
   },
   defaultUrl: {
-    value: "example.pdf",
+    value: pdf_src,
     kind: OptionKind.VIEWER
   },
   defaultZoomValue: {
