@@ -12,6 +12,8 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="./public/css/fontawesome/all.css" />
     <script src="./public/js/fontawesome/all.js"></script>
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="./public/css/aos/aos.css">
     <!-- my CSS -->
     <link rel="stylesheet" href="./public/css/color.css" />
     <link rel="stylesheet" href="./public/css/style.css" />
@@ -26,78 +28,7 @@
         <span class="dot dot3">.</span>
       </div>
     </div>
-    <!-- <nav class="mobile-menu">
-      <ul class="main-menu py-3">
-        <li class="py-1"><a href="#">關於中菲</a></li>
-        <li class="py-1"><a href="#">客服中心</a></li>
-        <li class="py-1"><a href="#">服務據點</a></li>
-        <li class="py-1"><a href="#">人才招募</a></li>
-      </ul>
-      <ul class="sub-menu">
-        <li class="px-sm-3 px-2"><a href="#" class="link">信託商品</a></li>
-        <li class="px-sm-3 px-2 drop-down">
-          <a>信託消息</a>
-          <i class="fas fa-chevron-down"></i>
-          <ul class="second-menu py-4">
-            <li class="px-3">
-              <div>
-                <h5>商品介紹</h5>
-                <ul>
-                  <li><a href="#" class="link">金錢信託</a></li>
-                  <li><a href="#" class="link">保險金信託</a></li>
-                  <li><a href="#" class="link">有價證券信託</a></li>
-                  <li><a href="#" class="link">不動產信託</a></li>
-                  <li><a href="#" class="link">租賃權信託</a></li>
-                  <li><a href="#" class="link">地上權信託</a></li>
-                  <li><a href="#" class="link">保管業務</a></li>
-                  <li><a href="#" class="link">證券簽證業務</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="px-3">
-              <div>
-                <h5>最新消息</h5>
-                <ul>
-                  <li><a href="#" class="link">最新動態</a></li>
-                  <li><a href="#" class="link">優惠訊息</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="px-3">
-              <div>
-                <h5>線上查詢</h5>
-                <ul>
-                  <li>
-                    <a href="#" class="link">強制信託-生前契約查詢</a>
-                  </li>
-                  <li>
-                    <a href="#" class="link">強制信託-預售屋價金信託查詢</a>
-                  </li>
-                  <li>
-                    <a href="#" class="link">不動產買賣價金信託查詢</a>
-                  </li>
-                  <li><a href="#" class="link">禮券信託查詢</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="px-3">
-              <div>
-                <h5>信託小百科</h5>
-                <ul>
-                  <li><a href="#" class="link">信託簡介</a></li>
-                  <li><a href="#" class="link">申辦流程</a></li>
-                  <li><a href="#" class="link">客戶權益</a></li>
-                  <li><a href="#" class="link">常見問題</a></li>
-                  <li><a href="#" class="link">資料下載</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li class="px-sm-3 px-2"><a href="#" class="link">信託小百科</a></li>
-      </ul>
-    </nav> -->
-    
+
     <header>
       <div class="main-header">
         <div class="container">
@@ -120,7 +51,6 @@
                 </ul>
               </nav>
               <i class="fas fa-search search mx-2"></i>
-              
             </div>
           </div>
         </div>
@@ -187,7 +117,9 @@
                 </li>
               </ul>
             </li>
-            <li class="px-sm-3 px-2"><a href="#" class="link">信託小百科</a></li>
+            <li class="px-sm-3 px-2">
+              <a href="#" class="link">信託小百科</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -279,7 +211,7 @@
                   <span>信託消息</span>
                   <img src="./public/img/icon_arrow_right_white.svg" alt="" />
                 </div>
-                <ul class="back-drop-down" style="display: block;">
+                <ul class="back-drop-down" style="display: block">
                   <li class="active">
                     <span class="dl_2 active dropdown-list flex-style">
                       <span>商品介紹</span>
@@ -294,15 +226,31 @@
                         alt=""
                       />
                     </span>
-                    <ul class="dropdown-link" style="display: block;">
-                      <li class="dropdown-list active"><a href="#" class="link">金錢信託</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">保險金信託</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">有價證券信託</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">不動產信託</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">租賃權信託</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">地上權信託</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">保管業務</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">證券簽證業務</a></li>
+                    <ul class="dropdown-link" style="display: block">
+                      <li class="dropdown-list active">
+                        <a href="#" class="link">金錢信託</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">保險金信託</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">有價證券信託</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">不動產信託</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">租賃權信託</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">地上權信託</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">保管業務</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">證券簽證業務</a>
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -320,8 +268,12 @@
                       />
                     </span>
                     <ul class="dropdown-link">
-                      <li class="dropdown-list"><a href="#" class="link">最新動態</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">優惠訊息</a></li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">最新動態</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">優惠訊息</a>
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -348,7 +300,9 @@
                       <li class="dropdown-list">
                         <a href="#" class="link">不動產買賣價金信託查詢</a>
                       </li>
-                      <li class="dropdown-list"><a href="#" class="link">禮券信託查詢</a></li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">禮券信託查詢</a>
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -366,11 +320,21 @@
                       />
                     </span>
                     <ul class="dropdown-link">
-                      <li class="dropdown-list"><a href="#" class="link">信託簡介</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">申辦流程</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">客戶權益</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">常見問題</a></li>
-                      <li class="dropdown-list"><a href="#" class="link">資料下載</a></li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">信託簡介</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">申辦流程</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">客戶權益</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">常見問題</a>
+                      </li>
+                      <li class="dropdown-list">
+                        <a href="#" class="link">資料下載</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -517,14 +481,16 @@
           <div class="white-box wb-left"></div>
           <div class="swiper-container" id="activity">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="#" class="blank-link">
-                  <div
-                    class="acti-pic bg"
-                    style="
-                      background-image: url(./public/img/pic_news_bn_1.png);
-                    "
-                  ></div>
+              <div class="swiper-slide" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
+                <a href="#" class="acti-link blank-link">
+                  <div class="acti">
+                    <div
+                      class="acti-pic bg"
+                      style="
+                        background-image: url(./public/img/pic_news_bn_1.png);
+                      "
+                    ></div>
+                  </div>
                   <p class="duration">2021/01/01~2021/04/30</p>
                   <h5 class="acti-title">
                     e財寶薦者有份，抽iPhone送禮金-被推薦人送禮金已額滿
@@ -532,27 +498,31 @@
                   <p class="content">推薦人抽iPhone，被推薦人抽禮金！</p>
                 </a>
               </div>
-              <div class="swiper-slide">
-                <a href="#" class="blank-link">
-                  <div
-                    class="acti-pic bg"
-                    style="
-                      background-image: url(./public/img/pic_news_bn_2.png);
-                    "
-                  ></div>
+              <div class="swiper-slide" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="100">
+                <a href="#" class="acti-link blank-link">
+                  <div class="acti">
+                    <div
+                      class="acti-pic bg"
+                      style="
+                        background-image: url(./public/img/pic_news_bn_2.png);
+                      "
+                    ></div>
+                  </div>
                   <p class="duration">2021/02/01~2021/03/31</p>
                   <h5 class="acti-title">對抗疫情，我們挺你</h5>
                   <p class="content">新冠肺炎紓困振興專區</p>
                 </a>
               </div>
-              <div class="swiper-slide">
-                <a href="#" class="blank-link">
-                  <div
-                    class="acti-pic bg"
-                    style="
-                      background-image: url(./public/img/pic_news_bn_1.png);
-                    "
-                  ></div>
+              <div class="swiper-slide" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="200">
+                <a href="#" class="acti-link blank-link">
+                  <div class="acti">
+                    <div
+                      class="acti-pic bg"
+                      style="
+                        background-image: url(./public/img/pic_news_bn_1.png);
+                      "
+                    ></div>
+                  </div>
                   <p class="duration">2021/01/01~2021/04/30</p>
                   <h5 class="acti-title">
                     e財寶薦者有份，抽iPhone送禮金-被推薦人送禮金已額滿
@@ -560,27 +530,31 @@
                   <p class="content">推薦人抽iPhone，被推薦人抽禮金！</p>
                 </a>
               </div>
-              <div class="swiper-slide">
-                <a href="#" class="blank-link">
-                  <div
-                    class="acti-pic bg"
-                    style="
-                      background-image: url(./public/img/pic_news_bn_2.png);
-                    "
-                  ></div>
+              <div class="swiper-slide" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="300">
+                <a href="#" class="acti-link blank-link">
+                  <div class="acti">
+                    <div
+                      class="acti-pic bg"
+                      style="
+                        background-image: url(./public/img/pic_news_bn_2.png);
+                      "
+                    ></div>
+                  </div>
                   <p class="duration">2021/02/01~2021/03/31</p>
                   <h5 class="acti-title">對抗疫情，我們挺你</h5>
                   <p class="content">新冠肺炎紓困振興專區</p>
                 </a>
               </div>
-              <div class="swiper-slide">
-                <a href="#" class="blank-link">
-                  <div
-                    class="acti-pic bg"
-                    style="
-                      background-image: url(./public/img/pic_news_bn_1.png);
-                    "
-                  ></div>
+              <div class="swiper-slide" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="400">
+                <a href="#" class="acti-link blank-link">
+                  <div class="acti">
+                    <div
+                      class="acti-pic bg"
+                      style="
+                        background-image: url(./public/img/pic_news_bn_1.png);
+                      "
+                    ></div>
+                  </div>
                   <p class="duration">2021/01/01~2021/04/30</p>
                   <h5 class="acti-title">
                     e財寶薦者有份，抽iPhone送禮金-被推薦人送禮金已額滿
@@ -606,9 +580,7 @@
           <a href="#" class="blank-link">
             <div
               class="acti-pic bg"
-              style="
-                background-image: url(./public/img/pic_news_bn_1.png);
-              "
+              style="background-image: url(./public/img/pic_news_bn_1.png)"
             ></div>
             <p class="duration">2021/01/01~2021/04/30</p>
             <h5 class="acti-title">
@@ -619,9 +591,7 @@
           <a href="#" class="blank-link">
             <div
               class="acti-pic bg"
-              style="
-                background-image: url(./public/img/pic_news_bn_2.png);
-              "
+              style="background-image: url(./public/img/pic_news_bn_2.png)"
             ></div>
             <p class="duration">2021/02/01~2021/03/31</p>
             <h5 class="acti-title">對抗疫情，我們挺你</h5>
@@ -819,10 +789,12 @@
             class="col-sm-4 col-12 mb-sm-0 mb-3"
             class="blank-link"
           >
+          <div class="recc-pic" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
             <div
               class="pic-box bg"
               style="background-image: url(./public/img/pic_news_bn_1.png)"
             ></div>
+          </div>
           </a>
           <a
             href="#"
@@ -830,10 +802,12 @@
             class="col-sm-4 col-12 mb-sm-0 mb-3"
             class="blank-link"
           >
+          <div class="recc-pic" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="200">
             <div
               class="pic-box bg"
               style="background-image: url(./public/img/pic_news_bn_2.png)"
             ></div>
+          </div>
           </a>
           <a
             href="#"
@@ -841,10 +815,12 @@
             class="col-sm-4 col-12 mb-sm-0 mb-3"
             class="blank-link"
           >
+          <div class="recc-pic" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="400">
             <div
               class="pic-box bg"
               style="background-image: url(./public/img/pic_news_bn_1.png)"
             ></div>
+          </div>
           </a>
         </div>
       </div>
@@ -880,7 +856,7 @@
             0800-000-000(限市話)
           </p>
           <p class="copyright-mobile">
-            ©中非信託版權所有<br>客服中心單一代表號：000-0000<br>手機請撥02-000-000/0800-000-000(限市話)
+            ©中非信託版權所有<br />客服中心單一代表號：000-0000<br />手機請撥02-000-000/0800-000-000(限市話)
           </p>
           <img src="./public/img/cdic.jpeg" alt="" />
         </div>
@@ -893,8 +869,14 @@
     <script src="./public/js/bootstrap/bootstrap.min.js"></script>
     <!-- swiper JS -->
     <script src="./public/js/swiper/swiper-bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="./public/js/aos/aos.js"></script>
     <!-- my JS -->
     <script src="./public/js/swiper.js"></script>
     <script src="./public/js/index.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
