@@ -220,8 +220,17 @@
   right: 0;
 }
 
+.acti-link .acti-inner {
+  border: 2px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+
 .acti-link:hover .acti-pic {
   transform: scale(1.2);
+}
+
+.acti-link:hover .acti-inner {
+  border: 2px solid var(--blue-btn);
 }
 
 .acti {
@@ -246,6 +255,7 @@
   color: var(--orange-btn);
   font-size: 15px;
   margin-bottom: 15px;
+  padding: 0 10px;
 }
 
 .activity .acti-title {
@@ -259,6 +269,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  padding: 0 10px;
 }
 
 .activity .content {
@@ -267,6 +278,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   height: 50px;
+  padding: 0 10px;
 }
 
 .activity .arrow {

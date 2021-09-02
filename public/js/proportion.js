@@ -319,12 +319,10 @@ $(".pr-name").click(function () {
     $(this).hasClass("active") ||
     $(".pr-dot.dot" + nameIndex).hasClass("active")
   ) {
-    console.log("已經選過了");
     $(this).removeClass("active");
     $(".pr-dot.dot" + nameIndex).removeClass("active");
     $(".PR-popup").hide();
   } else {
-    console.log("大家都沒被選過");
     $(".pr-name").removeClass("active");
     $(".pr-dot").removeClass("active");
     $(this).addClass("active");
@@ -335,7 +333,6 @@ $(".pr-name").click(function () {
 });
 
 $(".pr-dot").click(function () {
-  console.log("螢幕寬=" + $(window).width());
   if ($(window).width() < 576) {
     var nameIndex = $("#proportionReport .pr-dot").index(this);
     var propName = PR_data[nameIndex].name;
@@ -350,14 +347,10 @@ $(".pr-dot").click(function () {
       $(this).hasClass("active") ||
       $(".pr-name.name" + nameIndex).hasClass("active")
     ) {
-      console.log("已經選過了");
-      console.log("!!!");
       $(this).removeClass("active");
       $(".pr-name.name" + nameIndex).removeClass("active");
       $(".PR-popup").hide();
     } else {
-      console.log("大家都沒被選過");
-      console.log("!!!");
       $(".pr-name").removeClass("active");
       $(".pr-dot").removeClass("active");
       $(this).addClass("active");
@@ -708,12 +701,10 @@ $(window).on("resize", function () {
         $(this).hasClass("active") ||
         $(".pr-name.name" + nameIndex).hasClass("active")
       ) {
-        // console.log("已經選過了");
         $(this).removeClass("active");
         $(".pr-name.name" + nameIndex).removeClass("active");
         $(".PR-popup").hide();
       } else {
-        // console.log("大家都沒被選過");
         $(".pr-name").removeClass("active");
         $(".pr-dot").removeClass("active");
         $(this).addClass("active");
@@ -727,7 +718,6 @@ $(window).on("resize", function () {
     .not(".data")
     .click(function () {
       if ($(window).width() < 576) {
-        // console.log("沒有pr-name也沒有pr-dot的地方～");
         $(".pr-name").removeClass("active");
         $(".pr-dot").removeClass("active");
         $(".PR-popup").hide();
